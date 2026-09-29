@@ -521,3 +521,12 @@ label.txt { cursor: default; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* group credits */
+.welcome .credits { margin: 16px 0 0; font-size: 12px; line-height: 1.45; color: var(--muted); text-align: center; text-wrap: balance; }
+.welcome .credits span { display: block; color: var(--faint); margin-top: 2px; }
+.about-card { padding: 14px 16px; }
+.about-card p { margin: 0; font-size: 13px; color: var(--muted); }
+.about-card ul { list-style: none; margin: 8px 0 10px; padding: 0; display: grid; gap: 6px; }
+.about-card li { font-size: 15px; font-weight: 700; }
+.about-card p.muted { font-size: 12px; }

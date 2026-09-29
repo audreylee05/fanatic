@@ -3,6 +3,12 @@
 // Every sport lists its major leagues on any network. `espn` marks leagues that stream on ESPN (true = all or most, 'some' = part).
 // Clip titles are illustrative sample content.
 
+// Group members credited on the welcome screen and in Profile.
+const PROJECT = {
+  members: ['Saumya Lohia', 'Audrey Lourdes Lee', 'Anandi Joshi', 'Meruyert Tastybay'],
+  assignment: 'Group Assignment · Lecture 3',
+};
+
 const PROTO_NOW = new Date('2026-09-24T20:40:00-04:00'); // prototype clock: Thu 8:40 PM ET
 const TODAY = '2026-09-24';
 

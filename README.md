@@ -1,5 +1,7 @@
 # Fanatic
 
+**Team:** Saumya Lohia, Audrey Lourdes Lee, Anandi Joshi and Meruyert Tastybay · Group Assignment, Lecture 3
+
 A clickable prototype of a sports watch-list app. Fanatic builds a weekly watch schedule from the teams, players and shows you follow, and keeps highlights, recaps and full-game replays in one queue.
 
 It's a class project built with plain HTML, CSS and JavaScript. There's no build step and nothing to install.

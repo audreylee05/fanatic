@@ -43,6 +43,7 @@ function espnBadge(l, long = false) {
   const all = l.espn === true;
   return `<span class="espn-mini ${all ? '' : 'some'}" title="${all ? 'Streams on ESPN' : 'Some games stream on ESPN'}">${long ? (all ? 'On ESPN' : 'Some on ESPN') : 'ESPN'}</span>`;
 }
+const listNames = names => names.length < 2 ? names.join('') : `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
 const plural = (n, w) => `${n} ${w}${n === 1 ? '' : /(ch|sh|s|x)$/.test(w) ? 'es' : 's'}`;
 function ordinal(n) { const s = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); }
 function initials(name) { return name.split(/\s+/).map(w => w[0]).slice(0, 2).join(''); }
@@ -530,6 +531,7 @@ function viewWelcome() {
       <div><span class="espn-logo" style="font-size:12px;padding:1px 6px;border-radius:4px">ESPN</span><span>Syncs with your ESPN account</span></div>
     </div>
     <button class="btn primary block" data-a="go" data-id="#/setup/connect">Get started</button>
+    <p class="credits">Built by ${esc(listNames(PROJECT.members))}<span>${esc(PROJECT.assignment)}</span></p>
   </div>`;
 }
 
@@ -1146,6 +1148,10 @@ function viewProfile() {
       <div class="toggle-row"><span class="txt">Group my schedule<small>Player view shows recent form for each player</small></span>
         <span class="mini-seg"><button class="${S.prefs.group === 'teams' ? 'on' : ''}" data-a="group-pref" data-id="teams">By day</button><button class="${S.prefs.group === 'players' ? 'on' : ''}" data-a="group-pref" data-id="players">By player</button></span></div>
     </div>
+    <div class="section-label">About this prototype</div>
+    <div class="card about-card"><p>Fanatic was designed and built by</p>
+      <ul>${PROJECT.members.map(n => `<li>${esc(n)}</li>`).join('')}</ul>
+      <p class="muted">${esc(PROJECT.assignment)} · Sample data covers Sep 17–30, 2026</p></div>
     <div style="text-align:center;padding:14px"><button class="link-btn" data-a="reset">Restart prototype</button></div>`;
 }
 
