@@ -85,7 +85,7 @@ function tzAbbr(d) {
   return p ? p.value : '';
 }
 function clockNow() { return fmtr('clk', { hour: 'numeric', minute: '2-digit' }).format(PROTO_NOW).replace(/\s?[AP]M$/i, ''); }
-function dateBounds() { const ds = GAMES.map(localDate).sort(); return [ds[0], ds[ds.length - 1]]; }
+function dateBounds() { const ds = GAMES.map(localDate).filter(d => d >= '2026-09-17').sort(); return [ds[0], ds[ds.length - 1]]; }
 
 // Plain calendar dates ('YYYY-MM-DD') are formatted in UTC so they never shift a day.
 function dateObj(d) { return new Date(d + 'T12:00:00Z'); }
@@ -1426,7 +1426,7 @@ document.addEventListener('keydown', e => {
   GAMES.forEach(g => {
     if (!league(g.league)) warn('unknown league', g.id, g.league);
     if (!isEvent(g) && (!TEAMS[g.away] || !TEAMS[g.home])) warn('unknown team', g.id, g.away, g.home);
-    if (g.date < '2026-09-17' || g.date > '2026-09-30' || !/^\d{4}-\d\d-\d\d$/.test(g.date)) warn('date outside Sep 17–30', g.id, g.date);
+    if ((g.endDate || g.date) < '2026-09-17' || g.date > '2026-09-30' || !/^\d{4}-\d\d-\d\d$/.test(g.date)) warn('date outside Sep 17–30', g.id, g.date);
     if (g.time && !/^([01]\d|2[0-3]):[0-5]\d$/.test(g.time)) warn('bad time', g.id, g.time);
     if (!NETWORKS.includes(g.network)) warn('unknown network', g.id, g.network);
     const k = [g.league, g.date, g.time, g.away, g.home, g.event].join('|');

@@ -49,7 +49,7 @@ const LEAGUES = [
   { id: 'ncaavb', sport: 'volleyball', espn: 'some', name: "NCAA Women's Volleyball", short: 'NCAAVB', popular: true, color: '#7a2a8a' },
   { id: 'ncaasb', sport: 'softball', espn: true, name: 'College Softball', short: 'NCAASB', popular: true, color: '#c2571a', offweek: 'Season opens in February' },
   { id: 'pll', sport: 'lacrosse', espn: true, name: 'Premier Lacrosse League', short: 'PLL', popular: true, color: '#111111', offweek: 'Season complete · Waterdogs won the title Sep 20', offweekSafe: 'Season complete · Championship was Sep 20' },
-  { id: 'wicricket', sport: 'cricket', espn: 'some', name: 'West Indies Cricket', short: 'WI', popular: true, color: '#7b0a2a', offweek: 'No ESPN matches this week' },
+  { id: 'wicricket', sport: 'cricket', espn: 'some', name: 'West Indies Cricket', short: 'WI', popular: true, color: '#7b0a2a', offweek: 'In India for 3 ODIs from Sep 27 · on Willow, not ESPN' },
   { id: 'mlr', sport: 'rugby', name: 'Major League Rugby', short: 'MLR', popular: true, color: '#0d3b66', offweek: 'Offseason · season runs spring to summer', teamNote: 'MLR teams open for following when the next season is set.' },
   { id: 'mlp', sport: 'pickleball', name: 'Major League Pickleball', short: 'MLP', popular: true, kind: 'individual', athletes: 'players', color: '#0f7c6c', offweek: 'Season wrapped in August' },
   // --- soccer research, verified Sep 28, 2026
@@ -66,6 +66,24 @@ const LEAGUES = [
   { id: 'kbo', sport: 'baseball', name: 'KBO League', short: 'KBO', color: '#0A3D91', espn: false },
   { id: 'pwhl', sport: 'hockey', name: 'PWHL', short: 'PWHL', color: '#33058D', espn: false, offweek: 'Offseason · 2026–27 season opens Dec 5' },
   { id: 'ahl', sport: 'hockey', name: 'American Hockey League', short: 'AHL', color: '#231F20', espn: false, offweek: 'Season opens Oct 2' },
+  // --- individual research, verified Sep 28, 2026
+  { id: 'lpga', sport: 'golf', name: 'LPGA Tour', short: 'LPGA', color: '#00205B', espn: false, kind: 'individual', athletes: 'golfers' },
+  { id: 'dpwt', sport: 'golf', name: 'DP World Tour', short: 'DPWT', color: '#0A1F44', espn: false, kind: 'individual', athletes: 'golfers' },
+  { id: 'liv', sport: 'golf', name: 'LIV Golf', short: 'LIV', color: '#1A1A1A', espn: false, kind: 'individual', athletes: 'golfers', offweek: 'Season complete · Jon Rahm won the 2026 individual title' },
+  { id: 'atp', sport: 'tennis', name: 'ATP Tour', short: 'ATP', color: '#00235B', espn: false, kind: 'individual', athletes: 'players' },
+  { id: 'wta', sport: 'tennis', name: 'WTA Tour', short: 'WTA', color: '#5B2A86', espn: false, kind: 'individual', athletes: 'players' },
+  { id: 'lovb', sport: 'volleyball', name: 'LOVB Pro', short: 'LOVB', color: '#0B1F3A', espn: 'some', offweek: 'Season opens Dec 17 in San Antonio' },
+  { id: 'mlv', sport: 'volleyball', name: 'Major League Volleyball', short: 'MLV', color: '#12284C', espn: false, offweek: 'Offseason · Dallas Pulse won the 2026 title' },
+  { id: 'ausl', sport: 'softball', name: 'Athletes Unlimited Softball League', short: 'AUSL', color: '#1D1D3B', espn: true, offweek: 'Offseason · Utah Talons won the 2026 title Jul 26' },
+  { id: 'ncaaml', sport: 'lacrosse', name: "NCAA Men's Lacrosse", short: 'NCAAML', color: '#1f4e79', espn: true, offweek: 'Season opens in February · Princeton won the 2026 title' },
+  { id: 'nll', sport: 'lacrosse', name: 'National Lacrosse League', short: 'NLL', color: '#0A2240', espn: true, offweek: 'Season opens Nov 27' },
+  { id: 'cpl', sport: 'cricket', name: 'Caribbean Premier League', short: 'CPL', color: '#5B2C83', espn: false, offweek: 'Season complete · Falcons won the title Sep 20' },
+  { id: 'ipl', sport: 'cricket', name: 'Indian Premier League', short: 'IPL', color: '#19398A', espn: false, offweek: 'Season complete · RCB won the 2026 title May 31' },
+  { id: 'mlc', sport: 'cricket', name: 'Major League Cricket', short: 'MLC', color: '#002D62', espn: false, offweek: 'Season complete · LA Knight Riders won the title Jul 18' },
+  { id: 'prem', sport: 'rugby', name: 'Premiership Rugby', short: 'PREM', color: '#0B2240', espn: false },
+  { id: 'sixnations', sport: 'rugby', name: 'Six Nations', short: '6N', color: '#0B1E3F', espn: false, offweek: '2027 Championship opens Feb 5' },
+  { id: 'rugbychamp', sport: 'rugby', name: 'Nations Championship', short: 'NATIONS', color: '#00205B', espn: false, offweek: 'No Tests this week · Nations Championship resumes Nov 6' },
+  { id: 'ppa', sport: 'pickleball', name: 'PPA Tour', short: 'PPA', color: '#228BE6', espn: false, kind: 'individual', athletes: 'players' },
 ];
 
 // One team per ";" entry: "ABBR|Name|#color" (college football adds "|Conference").
@@ -200,14 +218,36 @@ WHP|Maryland Whipsnakes|#3CDBC0;ATL|New York Atlas|#0CB7F2;WAT|Philadelphia Wate
   RFD|Rockford IceHogs|#DA1A32;TEX|Texas Stars|#14602D;ABB|Abbotsford Canucks|#007934;BAK|Bakersfield Condors|#00205B;CGY|Calgary Wranglers|#CE0E2D;
   CV|Coachella Valley Firebirds|#001425;COL|Colorado Eagles|#12368B;HSK|Henderson Silver Knights|#C3C7C9;ONT|Ontario Reign|#000000;SD|San Diego Gulls|#231F20;
   SJ|San Jose Barracuda|#216B74;TUC|Tucson Roadrunners|#6F263D`,
+  // --- individual research, verified Sep 28, 2026
+  lovb: `ATL|LOVB Atlanta|#C8102E;AUS|LOVB Austin|#E35205;HOU|LOVB Houston|#002D72;LA|Los Angeles Orbit|#3A2A6B;MAD|LOVB Madison|#C5050C;
+  MIA|LOVB Miami|#00A3AD;MIN|LOVB Minnesota|#0A3161;NEB|LOVB Nebraska|#D00000;SLC|LOVB Salt Lake|#1F4E79;SF|SF Signal|#F2A900`,
+  mlv: `ATL|Atlanta Vibe|#B5D334;CLB|Columbus Fury|#D22630;DAL|Dallas Pulse|#E4007C;GR|Grand Rapids Rise|#F47B20;IND|Indy Ignite|#E35205;
+  OMA|Omaha Supernovas|#4B2E83;ORL|Orlando Valkyries|#6A2C91;VGS|Vegas Thrill|#00A9CE;DC|DC Flight|#0A3161;MIN|Minnesota Forge|#1B365D;NCR|NorCal Rumble|#C8102E`,
+  ausl: `CHI|Chicago Bandits|#0C2340;CAR|Carolina Blaze|#E35205;POR|Portland Cascade|#006B3F;OKC|Oklahoma City Spark|#F2A900;UTA|Utah Talons|#5B2C83;TEX|Texas Volts|#00A3E0`,
+  ncaaml: `PRIN|Princeton Tigers|#E77500;ND|Notre Dame Fighting Irish|#0C2340;SYR|Syracuse Orange|#F76900;DUKE|Duke Blue Devils|#003087;
+  UNC|North Carolina Tar Heels|#7BAFD4;PSU|Penn State Nittany Lions|#041E42;RICH|Richmond Spiders|#990000;JHU|Johns Hopkins Blue Jays|#002D72;
+  GTWN|Georgetown Hoyas|#041E42;COR|Cornell Big Red|#B31B1B;UVA|Virginia Cavaliers|#F84C1E;YALE|Yale Bulldogs|#00356B`,
+  nll: `BUF|Buffalo Bandits|#FF671F;CGY|Calgary Roughnecks|#97999B;COL|Colorado Mammoth|#8A2432;GA|Georgia Swarm|#002855;
+  HFX|Halifax Thunderbirds|#582C83;LV|Las Vegas Desert Dogs|#010101;OSH|Oshawa FireWolves|#7A303F;ROC|Rochester Knighthawks|#4D5A31;
+  SD|San Diego Seals|#62269E;SAS|Saskatchewan Rush|#70BF4A;TOR|Toronto Rock|#003DA5;VAN|Vancouver Warriors|#B3A168`,
+  cpl: `ABF|Antigua and Barbuda Falcons|#E8172C;BT|Barbados Tridents|#F40BEC;GAW|Guyana Amazon Warriors|#00843D;JAK|Jamaica Kingsmen|#009B3A;
+  SKNP|St Kitts and Nevis Patriots|#E90C0C;SLK|St Lucia Kings|#0DC4F2;TKR|Trinbago Knight Riders|#D11F2A`,
+  ipl: `CSK|Chennai Super Kings|#FDB913;DC|Delhi Capitals|#17449B;GT|Gujarat Titans|#1B2133;KKR|Kolkata Knight Riders|#3A225D;LSG|Lucknow Super Giants|#0057E2;
+  MI|Mumbai Indians|#004BA0;PBKS|Punjab Kings|#DD1F2D;RR|Rajasthan Royals|#EA1A85;RCB|Royal Challengers Bengaluru|#EC1C24;SRH|Sunrisers Hyderabad|#F26522`,
+  mlc: `LAKR|Los Angeles Knight Riders|#3A225D;MINY|MI New York|#004BA0;SFU|San Francisco Unicorns|#F26522;SEO|Seattle Orcas|#002D62;
+  TSK|Texas Super Kings|#FDB913;WAF|Washington Freedom|#C8102E`,
+  prem: `BAT|Bath Rugby|#1B3B6F;BRI|Bristol Bears|#0A2D6E;EXE|Exeter Chiefs|#000000;GLO|Gloucester Rugby|#C8102E;HAR|Harlequins|#6CACE4;
+  LEI|Leicester Tigers|#00543C;NEW|Newcastle Red Bulls|#DB0A40;NOR|Northampton Saints|#00553E;SAL|Sale Sharks|#002D62;SAR|Saracens|#1A1A1A`,
+  sixnations: `ENG|England|#E4002B;FRA|France|#002395;IRE|Ireland|#169B62;ITA|Italy|#0066B3;SCO|Scotland|#003A70;WAL|Wales|#D30731`,
+  rugbychamp: `ARG|Argentina|#75AADB;AUS|Australia|#FFCD00;FIJ|Fiji|#1F1F1F;JPN|Japan|#D7002A;NZL|New Zealand|#000000;RSA|South Africa|#006A4E`,
 };
 
 // Compact names for dense rows: nickname for pro teams, school for college, full name for clubs.
-const PRO_NICK2 = ['Wolf Pack', 'Silver Knights', 'Blue Bombers', 'Golden Eagles', 'Red Sox', 'White Sox', 'Blue Jays', 'Red Wings', 'Blue Jackets', 'Maple Leafs', 'Golden Knights', 'Trail Blazers'];
-const COLLEGE_MASCOT2 = ['Crimson Tide', 'Fighting Illini', 'Demon Deacons', 'Blue Hens', 'Tar Heels', 'Blue Devils', 'Fighting Irish', 'Golden Gophers',
+const PRO_NICK2 = ['Desert Dogs', 'Wolf Pack', 'Silver Knights', 'Blue Bombers', 'Golden Eagles', 'Red Sox', 'White Sox', 'Blue Jays', 'Red Wings', 'Blue Jackets', 'Maple Leafs', 'Golden Knights', 'Trail Blazers'];
+const COLLEGE_MASCOT2 = ['Blue Jays', 'Big Red', 'Crimson Tide', 'Fighting Illini', 'Demon Deacons', 'Blue Hens', 'Tar Heels', 'Blue Devils', 'Fighting Irish', 'Golden Gophers',
   'Nittany Lions', 'Scarlet Knights', 'Sun Devils', 'Horned Frogs', 'Red Raiders', 'Golden Bears', 'Yellow Jackets', 'Green Wave', 'Fighting Hawks', 'Lady Vols'];
-const PRO_LEAGUES = ['nfl', 'nba', 'wnba', 'mlb', 'nhl', 'pll', 'cfl', 'nbl', 'npb', 'kbo', 'pwhl', 'ahl'];
-const COLLEGE_LEAGUES = ['cfb', 'mcbb', 'wcbb', 'cbase', 'chockey', 'ncaavb', 'ncaasb'];
+const PRO_LEAGUES = ['nfl', 'nba', 'wnba', 'mlb', 'nhl', 'pll', 'cfl', 'nbl', 'npb', 'kbo', 'pwhl', 'ahl', 'mlv', 'ausl', 'nll'];
+const COLLEGE_LEAGUES = ['cfb', 'mcbb', 'wcbb', 'cbase', 'chockey', 'ncaavb', 'ncaasb', 'ncaaml'];
 const SHORT_NAMES = { 'Melbourne United': 'Melbourne', 'PWHL Detroit': 'Detroit', 'PWHL Hamilton': 'Hamilton', 'PWHL Las Vegas': 'Las Vegas', 'PWHL San Jose': 'San Jose' };
 function shortName(league, name) {
   if (SHORT_NAMES[name]) return SHORT_NAMES[name];
@@ -302,6 +342,17 @@ const PLAYERS = [
   ['cotton', 'Bryce Cotton', 'G', 'nbl-ADL'], ['dellavedova', 'Matthew Dellavedova', 'G', 'nbl-SYD'], ['pjc', 'Parker Jackson-Cartwright', 'G', 'nbl-NZB'],
   ['tsato', 'Teruaki Sato', '3B', 'npb-HAN'], ['kondoh', 'Kensuke Kondoh', 'OF', 'npb-SOF'], ['freyes', 'Franmil Reyes', 'DH', 'npb-NIP'],
   ['kimdoyeong', 'Kim Do-yeong', '3B', 'kbo-KIA'], ['adean', 'Austin Dean', '1B', 'kbo-LG'], ['kwakbin', 'Kwak Bin', 'P', 'kbo-DOO'],
+  // --- individual research, verified Sep 28, 2026
+  ['korda', 'Nelly Korda', 'Rolex No. 1', null, 'lpga'], ['thitikul', 'Jeeno Thitikul', 'Rolex No. 2', null, 'lpga'],
+  ['hryu', 'Haeran Ryu', 'Rolex No. 3', null, 'lpga'], ['hjkim', 'Hyo Joo Kim', 'Rolex No. 4', null, 'lpga'],
+  ['yamashita', 'Miyu Yamashita', 'Rolex No. 5', null, 'lpga'], ['ryin', 'Ruoning Yin', 'Rolex No. 6', null, 'lpga'],
+  ['woad', 'Lottie Woad', 'Rolex No. 7', null, 'lpga'], ['hull', 'Charley Hull', 'Rolex No. 8', null, 'lpga'],
+  ['reed', 'Patrick Reed', 'Race to Dubai No. 1', null, 'dpwt'], ['rai', 'Aaron Rai', 'Race to Dubai No. 4', null, 'dpwt'],
+  ['rfox', 'Ryan Fox', 'Race to Dubai No. 5', null, 'dpwt'],
+  ['rahm', 'Jon Rahm', 'LIV No. 1 · Legion XIII', null, 'liv'], ['dechambeau', 'Bryson DeChambeau', 'LIV No. 2 · Crushers GC', null, 'liv'],
+  ['niemann', 'Joaquin Niemann', 'LIV No. 3 · Torque GC', null, 'liv'], ['herbert', 'Lucas Herbert', 'LIV No. 4 · Ripper GC', null, 'liv'],
+  ['hatton', 'Tyrrell Hatton', 'LIV No. 5 · Legion XIII', null, 'liv'], ['detry', 'Thomas Detry', 'LIV No. 6 · 4Aces GC', null, 'liv'],
+  ['akim', 'Anthony Kim', 'LIV No. 7 · 4Aces GC', null, 'liv'], ['sgarcia', 'Sergio Garcia', 'LIV No. 8 · Fireballs GC', null, 'liv'],
 ].map(([id, name, pos, team, lg, also]) => ({ id, name, pos, team, league: team ? TEAMS[team].league : lg, also }));
 
 // Most recent verified stat line (ESPN box scores). [text, date] entries describe one game and hide in spoiler-free mode.
@@ -670,6 +721,15 @@ const GAME_ROWS = [
   ['kbo', '2026-09-30', '05:30', 'KT', 'KIA', 'SOOP', ''],
   ['wnba', '2026-09-24', '22:00', 'GSV', 'LA', '', 'Regular-season finale'],
   ['wnba', '2026-09-24', '22:00', 'LVA', 'PHX', '', 'Regular-season finale'],
+  // --- individual research, verified Sep 28, 2026
+  ['cpl', '2026-09-17', '20:00', 'GAW', 'ABF', 'Willow', 'Qualifier 1 · Falcons won by 9 wkts (GAW 76, ABF 77/1)', { score: [76, 77], tags: ['playoff'] }],
+  ['cpl', '2026-09-18', '19:00', 'JAK', 'GAW', 'Willow', 'Qualifier 2 · Kingsmen won by 5 wkts (GAW 206/4, JAK 207/5)', { score: [207, 206], tags: ['playoff'] }],
+  ['cpl', '2026-09-20', '19:00', 'JAK', 'ABF', 'Willow', 'Final · Falcons won by 8 wkts (JAK 170/9, ABF 173/2)', { score: [170, 173], tags: ['playoff'] }],
+  ['prem', '2026-09-25', '14:45', 'NEW', 'NOR', 'FloSports', 'Round 1 · Franklin\'s Gardens'],
+  ['prem', '2026-09-25', '14:45', 'BAT', 'HAR', 'FloSports', 'Round 1 · Twickenham Stoop'],
+  ['prem', '2026-09-26', '10:05', 'GLO', 'EXE', 'FloSports', 'Round 1 · Sandy Park'],
+  ['prem', '2026-09-26', '12:30', 'BRI', 'SAL', 'FloSports', 'Round 1 · Salford'],
+  ['prem', '2026-09-27', '10:00', 'SAR', 'LEI', 'FloSports', 'Round 1 · Welford Road'],
 ];
 
 // Events without a home/away matchup (golf rounds, tour stops, etc.). APPEND ONLY, same reason as GAME_ROWS.
@@ -680,6 +740,30 @@ const EVENT_ROWS = [
   ['pga', '2026-09-26', '09:00', 'Presidents Cup · Day 3', 'NBC', 'Four-ball and foursomes', { tags: ['marquee'], field: ['scheffler', 'burns', 'cyoung', 'schauffele', 'wclark', 'gotterup'] }],
   ['pga', '2026-09-27', '12:00', 'Presidents Cup · Singles', 'NBC', 'Final day at Medinah', { tags: ['marquee'], field: ['scheffler', 'burns', 'cyoung', 'schauffele', 'wclark', 'gotterup'] }],
   ['mlb', '2026-09-29', null, 'MLB Wild Card Series · Game 1s', 'NBC', 'Matchups set after Sunday', { tags: ['playoff'] }],
+  // --- individual research, verified Sep 28, 2026
+  ['lpga', '2026-09-25', null, 'Walmart NW Arkansas Championship · Round 1', 'Golf Channel', 'Pinnacle CC · Rogers, AR', { field: ['yamashita', 'woad', 'hull'] }],
+  ['lpga', '2026-09-26', null, 'Walmart NW Arkansas Championship · Round 2', 'Golf Channel', 'Pinnacle CC · Rogers, AR', { field: ['yamashita', 'woad', 'hull'] }],
+  ['lpga', '2026-09-27', null, 'Walmart NW Arkansas Championship · Final Round', 'Golf Channel', 'Pinnacle CC · Rogers, AR', { field: ['yamashita', 'woad', 'hull'] }],
+  ['dpwt', '2026-09-17', '07:00', 'BMW PGA Championship · Round 1', 'Golf Channel', 'Wentworth Club · Surrey, England', { field: ['mcilroy', 'fitzpatrick', 'fleetwood', 'reed', 'rai', 'rfox'], result: 'R1 co-leaders: Aaron Rai, Joakim Lagergren (-6)' }],
+  ['dpwt', '2026-09-18', '07:00', 'BMW PGA Championship · Round 2', 'Golf Channel', 'Wentworth Club · Surrey, England', { field: ['mcilroy', 'fitzpatrick', 'fleetwood', 'reed', 'rai', 'rfox'], result: 'R2 leader: Ryan Gerard (-12)' }],
+  ['dpwt', '2026-09-19', '07:00', 'BMW PGA Championship · Round 3', 'Golf Channel', 'Wentworth Club · Surrey, England', { field: ['mcilroy', 'fitzpatrick', 'rai', 'rfox'], result: 'R3 co-leaders: Filippo Celli, Manuel Elvira (-13)' }],
+  ['dpwt', '2026-09-20', '07:00', 'BMW PGA Championship · Final Round', 'Golf Channel', 'Wentworth Club · Surrey, England', { tags: ['marquee'], field: ['mcilroy', 'fitzpatrick', 'rai', 'rfox'], result: 'Winner: J.J. Spaun (-17) · McIlroy, Rai T2 (-15)' }],
+  ['dpwt', '2026-09-24', '07:30', 'FedEx Open de France · Round 1', 'Golf Channel', 'Le Golf National · Paris', { field: ['fitzpatrick', 'fleetwood'], result: 'R1 leader: Michael Kim (-8)' }],
+  ['dpwt', '2026-09-25', '07:30', 'FedEx Open de France · Round 2', 'Golf Channel', 'Le Golf National · Paris', { field: ['fitzpatrick', 'fleetwood'] }],
+  ['dpwt', '2026-09-26', null, 'FedEx Open de France · Round 3', 'Golf Channel', 'Le Golf National · Paris', { field: ['fitzpatrick'] }],
+  ['dpwt', '2026-09-27', null, 'FedEx Open de France · Final Round', 'Golf Channel', 'Le Golf National · Paris', { field: ['fitzpatrick'] }],
+  ['atp', '2026-09-23', '01:05', 'Chengdu Open', 'Tennis Channel', 'Chengdu, China · ATP 250 · final Sep 29', { endDate: '2026-09-29' }],
+  ['atp', '2026-09-23', '04:20', 'Hangzhou Open', 'Tennis Channel', 'Hangzhou, China · ATP 250 · final Sep 29', { endDate: '2026-09-29' }],
+  ['atp', '2026-09-25', '08:00', 'Laver Cup', 'Tennis Channel', 'The O2, London · Team Europe vs Team World', { endDate: '2026-09-27', tags: ['marquee'], field: ['zverev', 'alcaraz'] }],
+  ['atp', '2026-09-29', '22:00', 'Japan Open', 'Tennis Channel', 'Tokyo · ATP 500 · main draw from Sep 30 local', { endDate: '2026-10-06', field: ['alcaraz', 'tiafoe'] }],
+  ['atp', '2026-09-29', '23:00', 'China Open', 'Tennis Channel', 'Beijing · ATP 500 · main draw from Sep 30 local', { endDate: '2026-10-06', field: ['zverev'] }],
+  ['wta', '2026-09-13', '15:05', 'Guadalajara Open', 'Tennis Channel', 'Guadalajara, Mexico · WTA 500', { endDate: '2026-09-19', result: 'Winner: Iva Jovic (d. Peyton Stearns 6-4, 6-2)' }],
+  ['wta', '2026-09-15', '09:35', 'SP Open', 'Tennis Channel', 'São Paulo · WTA 250', { endDate: '2026-09-21', result: 'Winner: Kaitlin Quevedo (d. Nadia Podoroska 4-6, 6-4, 6-2)' }],
+  ['wta', '2026-09-20', '23:05', 'Korea Open', 'Tennis Channel', 'Seoul · WTA 250 · final Sep 27', { endDate: '2026-09-27' }],
+  ['wta', '2026-09-20', '23:05', 'Singapore Tennis Open', 'Tennis Channel', 'Singapore · WTA 500 · final Sep 27', { endDate: '2026-09-27', field: ['andreeva'] }],
+  ['wta', '2026-09-30', null, 'China Open', 'Tennis Channel', 'Beijing · WTA 1000 · main draw from Sep 30 local', { endDate: '2026-10-11', tags: ['marquee'], field: ['sabalenka', 'rybakina', 'gauff', 'andreeva'] }],
+  ['ppa', '2026-09-14', null, 'Veolia Arizona Open', 'PickleballTV', 'Mesa, AZ · PPA Open (1,000)', { endDate: '2026-09-20', field: ['johns', 'waters', 'staksrud'], result: 'Champions: Johns/Waters (MX), Waters (WS), Haworth (MS), Alshon/Daescu (MD), Rohrabacher/Todd (WD)' }],
+  ['ppa', '2026-09-30', '17:00', 'Rate Las Vegas Open', 'PickleballTV', 'Las Vegas · PPA Open (1,000) · finals Oct 4 on Tennis Channel', { endDate: '2026-10-04' }],
 ];
 
 const GAMES = [
@@ -836,7 +920,7 @@ const FAN_LEVELS = [
 // Every network string a game may use (checked in development).
 const NETWORKS = ['ESPN', 'ESPN2', 'ESPNU', 'ESPNEWS', 'ABC', 'ESPN/ABC', 'ESPN+', 'ESPN Unlimited', 'ESPN Deportes', 'SEC Network', 'ACC Network', 'SECN+',
   'FOX', 'FS1', 'FS2', 'CBS', 'CBSSN', 'Paramount+', 'NBC', 'USA Network', 'Peacock', 'Prime Video', 'Apple TV', 'TNT', 'truTV', 'Max', 'TBS', 'CW', 'ION',
-  'Tennis Channel', 'Golf Channel', 'Willow', 'NBA TV', 'NHL Network', 'MLB.TV', 'NWSL+', 'FloSports', 'DAZN', 'YouTube', 'Canadian TV', 'Fandango', 'Roku', 'CFL+', 'EuroLeague TV', 'SOOP', 'Local TV', 'TBD'];
+  'Tennis Channel', 'Golf Channel', 'Willow', 'NBA TV', 'NHL Network', 'MLB.TV', 'NWSL+', 'FloSports', 'DAZN', 'YouTube', 'Canadian TV', 'Fandango', 'Roku', 'CFL+', 'EuroLeague TV', 'SOOP', 'PickleballTV', 'Local TV', 'TBD'];
 
 // Minutes from start to final, per league, for live/final status.
 const LEAGUE_LEN = {
@@ -855,4 +939,15 @@ const LEAGUE_LEN = {
   kbo: 190,
   pwhl: 150,
   ahl: 150,
+  lovb: 120,
+  mlv: 120,
+  ausl: 150,
+  ncaaml: 150,
+  nll: 150,
+  cpl: 210,
+  ipl: 210,
+  mlc: 210,
+  prem: 110,
+  sixnations: 110,
+  rugbychamp: 110,
 };

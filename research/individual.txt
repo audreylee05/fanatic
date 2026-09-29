@@ -1,0 +1,264 @@
+// === LEAGUES
+{ id: 'lpga', sport: 'golf', name: 'LPGA Tour', short: 'LPGA', color: '#00205B', espn: false, kind: 'individual', athletes: 'golfers' },
+{ id: 'dpwt', sport: 'golf', name: 'DP World Tour', short: 'DPWT', color: '#0A1F44', espn: false, kind: 'individual', athletes: 'golfers' },
+{ id: 'liv', sport: 'golf', name: 'LIV Golf', short: 'LIV', color: '#1A1A1A', espn: false, kind: 'individual', athletes: 'golfers', offweek: 'Season complete · Jon Rahm won the 2026 individual title' },
+{ id: 'atp', sport: 'tennis', name: 'ATP Tour', short: 'ATP', color: '#00235B', espn: false, kind: 'individual', athletes: 'players' },
+{ id: 'wta', sport: 'tennis', name: 'WTA Tour', short: 'WTA', color: '#5B2A86', espn: false, kind: 'individual', athletes: 'players' },
+{ id: 'lovb', sport: 'volleyball', name: 'LOVB Pro', short: 'LOVB', color: '#0B1F3A', espn: 'some', offweek: 'Season opens Dec 17 in San Antonio' },
+{ id: 'mlv', sport: 'volleyball', name: 'Major League Volleyball', short: 'MLV', color: '#12284C', espn: false, offweek: 'Offseason · Dallas Pulse won the 2026 title' },
+{ id: 'ausl', sport: 'softball', name: 'Athletes Unlimited Softball League', short: 'AUSL', color: '#1D1D3B', espn: true, offweek: 'Offseason · Utah Talons won the 2026 title Jul 26' },
+{ id: 'ncaaml', sport: 'lacrosse', name: "NCAA Men's Lacrosse", short: 'NCAAML', color: '#1f4e79', espn: true, offweek: 'Season opens in February · Princeton won the 2026 title' },
+{ id: 'nll', sport: 'lacrosse', name: 'National Lacrosse League', short: 'NLL', color: '#0A2240', espn: true, offweek: 'Season opens Nov 27' },
+{ id: 'cpl', sport: 'cricket', name: 'Caribbean Premier League', short: 'CPL', color: '#5B2C83', espn: false, offweek: 'Season complete · Falcons won the title Sep 20' },
+{ id: 'ipl', sport: 'cricket', name: 'Indian Premier League', short: 'IPL', color: '#19398A', espn: false, offweek: 'Season complete · RCB won the 2026 title May 31' },
+{ id: 'mlc', sport: 'cricket', name: 'Major League Cricket', short: 'MLC', color: '#002D62', espn: false, offweek: 'Season complete · LA Knight Riders won the title Jul 18' },
+{ id: 'prem', sport: 'rugby', name: 'Premiership Rugby', short: 'PREM', color: '#0B2240', espn: false },
+{ id: 'sixnations', sport: 'rugby', name: 'Six Nations', short: '6N', color: '#0B1E3F', espn: false, offweek: '2027 Championship opens Feb 5' },
+{ id: 'rugbychamp', sport: 'rugby', name: 'Nations Championship', short: 'NATIONS', color: '#00205B', espn: false, offweek: 'No Tests this week · Nations Championship resumes Nov 6' },
+{ id: 'ppa', sport: 'pickleball', name: 'PPA Tour', short: 'PPA', color: '#228BE6', espn: false, kind: 'individual', athletes: 'players' },
+
+// === TEAM_ROWS
+lovb: `ATL|LOVB Atlanta|#C8102E;AUS|LOVB Austin|#E35205;HOU|LOVB Houston|#002D72;LA|Los Angeles Orbit|#3A2A6B;MAD|LOVB Madison|#C5050C;
+MIA|LOVB Miami|#00A3AD;MIN|LOVB Minnesota|#0A3161;NEB|LOVB Nebraska|#D00000;SLC|LOVB Salt Lake|#1F4E79;SF|SF Signal|#F2A900`,
+mlv: `ATL|Atlanta Vibe|#B5D334;CLB|Columbus Fury|#D22630;DAL|Dallas Pulse|#E4007C;GR|Grand Rapids Rise|#F47B20;IND|Indy Ignite|#E35205;
+OMA|Omaha Supernovas|#4B2E83;ORL|Orlando Valkyries|#6A2C91;VGS|Vegas Thrill|#00A9CE;DC|DC Flight|#0A3161;MIN|Minnesota Forge|#1B365D;NCR|NorCal Rumble|#C8102E`,
+ausl: `CHI|Chicago Bandits|#0C2340;CAR|Carolina Blaze|#E35205;POR|Portland Cascade|#006B3F;OKC|Oklahoma City Spark|#F2A900;UTA|Utah Talons|#5B2C83;TEX|Texas Volts|#00A3E0`,
+ncaaml: `PRIN|Princeton Tigers|#E77500;ND|Notre Dame Fighting Irish|#0C2340;SYR|Syracuse Orange|#F76900;DUKE|Duke Blue Devils|#003087;
+UNC|North Carolina Tar Heels|#7BAFD4;PSU|Penn State Nittany Lions|#041E42;RICH|Richmond Spiders|#990000;JHU|Johns Hopkins Blue Jays|#002D72;
+GTWN|Georgetown Hoyas|#041E42;COR|Cornell Big Red|#B31B1B;UVA|Virginia Cavaliers|#F84C1E;YALE|Yale Bulldogs|#00356B`,
+nll: `BUF|Buffalo Bandits|#FF671F;CGY|Calgary Roughnecks|#97999B;COL|Colorado Mammoth|#8A2432;GA|Georgia Swarm|#002855;
+HFX|Halifax Thunderbirds|#582C83;LV|Las Vegas Desert Dogs|#010101;OSH|Oshawa FireWolves|#7A303F;ROC|Rochester Knighthawks|#4D5A31;
+SD|San Diego Seals|#62269E;SAS|Saskatchewan Rush|#70BF4A;TOR|Toronto Rock|#003DA5;VAN|Vancouver Warriors|#B3A168`,
+cpl: `ABF|Antigua and Barbuda Falcons|#E8172C;BT|Barbados Tridents|#F40BEC;GAW|Guyana Amazon Warriors|#00843D;JAK|Jamaica Kingsmen|#009B3A;
+SKNP|St Kitts and Nevis Patriots|#E90C0C;SLK|St Lucia Kings|#0DC4F2;TKR|Trinbago Knight Riders|#D11F2A`,
+ipl: `CSK|Chennai Super Kings|#FDB913;DC|Delhi Capitals|#17449B;GT|Gujarat Titans|#1B2133;KKR|Kolkata Knight Riders|#3A225D;LSG|Lucknow Super Giants|#0057E2;
+MI|Mumbai Indians|#004BA0;PBKS|Punjab Kings|#DD1F2D;RR|Rajasthan Royals|#EA1A85;RCB|Royal Challengers Bengaluru|#EC1C24;SRH|Sunrisers Hyderabad|#F26522`,
+mlc: `LAKR|Los Angeles Knight Riders|#3A225D;MINY|MI New York|#004BA0;SFU|San Francisco Unicorns|#F26522;SEO|Seattle Orcas|#002D62;
+TSK|Texas Super Kings|#FDB913;WAF|Washington Freedom|#C8102E`,
+prem: `BAT|Bath Rugby|#1B3B6F;BRI|Bristol Bears|#0A2D6E;EXE|Exeter Chiefs|#000000;GLO|Gloucester Rugby|#C8102E;HAR|Harlequins|#6CACE4;
+LEI|Leicester Tigers|#00543C;NEW|Newcastle Red Bulls|#DB0A40;NOR|Northampton Saints|#00553E;SAL|Sale Sharks|#002D62;SAR|Saracens|#1A1A1A`,
+sixnations: `ENG|England|#E4002B;FRA|France|#002395;IRE|Ireland|#169B62;ITA|Italy|#0066B3;SCO|Scotland|#003A70;WAL|Wales|#D30731`,
+rugbychamp: `ARG|Argentina|#75AADB;AUS|Australia|#FFCD00;FIJ|Fiji|#1F1F1F;JPN|Japan|#D7002A;NZL|New Zealand|#000000;RSA|South Africa|#006A4E`,
+
+// === SHORTNAME
+lovb: club          // "LOVB Salt Lake" must not be cut to "Lake"
+mlv: pro
+ausl: pro
+ncaaml: college     // add 'Blue Jays' and 'Big Red' to COLLEGE_MASCOT2 (see NOTES)
+nll: pro            // add 'Desert Dogs' to PRO_NICK2 (see NOTES)
+cpl: club
+ipl: club
+mlc: club
+prem: club
+sixnations: club
+rugbychamp: club
+
+// === GAME_LEN
+lovb: 120,
+mlv: 120,
+ausl: 150,
+ncaaml: 150,
+nll: 150,
+cpl: 210,
+ipl: 210,
+mlc: 210,
+prem: 110,
+sixnations: 110,
+rugbychamp: 110,
+
+// === GAME_ROWS
+// ---- CPL playoffs, Kensington Oval, Bridgetown (Barbados = UTC-4, same clock as EDT). Score = runs [away, home].
+['cpl', '2026-09-17', '20:00', 'GAW', 'ABF', 'Willow', 'Qualifier 1 · Falcons won by 9 wkts (GAW 76, ABF 77/1)', { score: [76, 77], tags: ['playoff'] }],
+['cpl', '2026-09-18', '19:00', 'JAK', 'GAW', 'Willow', 'Qualifier 2 · Kingsmen won by 5 wkts (GAW 206/4, JAK 207/5)', { score: [207, 206], tags: ['playoff'] }],
+['cpl', '2026-09-20', '19:00', 'JAK', 'ABF', 'Willow', 'Final · Falcons won by 8 wkts (JAK 170/9, ABF 173/2)', { score: [170, 173], tags: ['playoff'] }],
+// ---- Premiership Rugby, Round 1 (all after the prototype clock, so no scores)
+['prem', '2026-09-25', '14:45', 'NEW', 'NOR', 'FloSports', 'Round 1 · Franklin\'s Gardens'],
+['prem', '2026-09-25', '14:45', 'BAT', 'HAR', 'FloSports', 'Round 1 · Twickenham Stoop'],
+['prem', '2026-09-26', '10:05', 'GLO', 'EXE', 'FloSports', 'Round 1 · Sandy Park'],
+['prem', '2026-09-26', '12:30', 'BRI', 'SAL', 'FloSports', 'Round 1 · Salford'],
+['prem', '2026-09-27', '10:00', 'SAR', 'LEI', 'FloSports', 'Round 1 · Welford Road'],
+
+// === EVENT_ROWS
+// ---- LPGA: Walmart NW Arkansas Championship, 54 holes Fri-Sun (Sep 17-20 was an LPGA off week). Starts after the prototype clock: no results.
+['lpga', '2026-09-25', null, 'Walmart NW Arkansas Championship · Round 1', 'Golf Channel', 'Pinnacle CC · Rogers, AR', { field: ['yamashita', 'woad', 'hull'] }],
+['lpga', '2026-09-26', null, 'Walmart NW Arkansas Championship · Round 2', 'Golf Channel', 'Pinnacle CC · Rogers, AR', { field: ['yamashita', 'woad', 'hull'] }],
+['lpga', '2026-09-27', null, 'Walmart NW Arkansas Championship · Final Round', 'Golf Channel', 'Pinnacle CC · Rogers, AR', { field: ['yamashita', 'woad', 'hull'] }],
+// ---- DP World Tour: BMW PGA Championship (finished) + FedEx Open de France (R1 finished before the clock)
+['dpwt', '2026-09-17', '07:00', 'BMW PGA Championship · Round 1', 'Golf Channel', 'Wentworth Club · Surrey, England', { field: ['mcilroy', 'fitzpatrick', 'fleetwood', 'reed', 'rai', 'rfox'], result: 'R1 co-leaders: Aaron Rai, Joakim Lagergren (-6)' }],
+['dpwt', '2026-09-18', '07:00', 'BMW PGA Championship · Round 2', 'Golf Channel', 'Wentworth Club · Surrey, England', { field: ['mcilroy', 'fitzpatrick', 'fleetwood', 'reed', 'rai', 'rfox'], result: 'R2 leader: Ryan Gerard (-12)' }],
+['dpwt', '2026-09-19', '07:00', 'BMW PGA Championship · Round 3', 'Golf Channel', 'Wentworth Club · Surrey, England', { field: ['mcilroy', 'fitzpatrick', 'rai', 'rfox'], result: 'R3 co-leaders: Filippo Celli, Manuel Elvira (-13)' }],
+['dpwt', '2026-09-20', '07:00', 'BMW PGA Championship · Final Round', 'Golf Channel', 'Wentworth Club · Surrey, England', { tags: ['marquee'], field: ['mcilroy', 'fitzpatrick', 'rai', 'rfox'], result: 'Winner: J.J. Spaun (-17) · McIlroy, Rai T2 (-15)' }],
+['dpwt', '2026-09-24', '07:30', 'FedEx Open de France · Round 1', 'Golf Channel', 'Le Golf National · Paris', { field: ['fitzpatrick', 'fleetwood'], result: 'R1 leader: Michael Kim (-8)' }],
+['dpwt', '2026-09-25', '07:30', 'FedEx Open de France · Round 2', 'Golf Channel', 'Le Golf National · Paris', { field: ['fitzpatrick', 'fleetwood'] }],
+['dpwt', '2026-09-26', null, 'FedEx Open de France · Round 3', 'Golf Channel', 'Le Golf National · Paris', { field: ['fitzpatrick'] }],
+['dpwt', '2026-09-27', null, 'FedEx Open de France · Final Round', 'Golf Channel', 'Le Golf National · Paris', { field: ['fitzpatrick'] }],
+// ---- ATP (date/time = first main-draw match in ET)
+['atp', '2026-09-23', '01:05', 'Chengdu Open', 'Tennis Channel', 'Chengdu, China · ATP 250 · final Sep 29', { endDate: '2026-09-29' }],
+['atp', '2026-09-23', '04:20', 'Hangzhou Open', 'Tennis Channel', 'Hangzhou, China · ATP 250 · final Sep 29', { endDate: '2026-09-29' }],
+['atp', '2026-09-25', '08:00', 'Laver Cup', 'Tennis Channel', 'The O2, London · Team Europe vs Team World', { endDate: '2026-09-27', tags: ['marquee'], field: ['zverev', 'alcaraz'] }],
+['atp', '2026-09-29', '22:00', 'Japan Open', 'Tennis Channel', 'Tokyo · ATP 500 · main draw from Sep 30 local', { endDate: '2026-10-06', field: ['alcaraz', 'tiafoe'] }],
+['atp', '2026-09-29', '23:00', 'China Open', 'Tennis Channel', 'Beijing · ATP 500 · main draw from Sep 30 local', { endDate: '2026-10-06', field: ['zverev'] }],
+// ---- WTA
+['wta', '2026-09-13', '15:05', 'Guadalajara Open', 'Tennis Channel', 'Guadalajara, Mexico · WTA 500', { endDate: '2026-09-19', result: 'Winner: Iva Jovic (d. Peyton Stearns 6-4, 6-2)' }],
+['wta', '2026-09-15', '09:35', 'SP Open', 'Tennis Channel', 'São Paulo · WTA 250', { endDate: '2026-09-21', result: 'Winner: Kaitlin Quevedo (d. Nadia Podoroska 4-6, 6-4, 6-2)' }],
+['wta', '2026-09-20', '23:05', 'Korea Open', 'Tennis Channel', 'Seoul · WTA 250 · final Sep 27', { endDate: '2026-09-27' }],
+['wta', '2026-09-20', '23:05', 'Singapore Tennis Open', 'Tennis Channel', 'Singapore · WTA 500 · final Sep 27', { endDate: '2026-09-27', field: ['andreeva'] }],
+['wta', '2026-09-30', null, 'China Open', 'Tennis Channel', 'Beijing · WTA 1000 · main draw from Sep 30 local', { endDate: '2026-10-11', tags: ['marquee'], field: ['sabalenka', 'rybakina', 'gauff', 'andreeva'] }],
+// ---- PPA Tour
+['ppa', '2026-09-14', null, 'Veolia Arizona Open', 'PickleballTV', 'Mesa, AZ · PPA Open (1,000)', { endDate: '2026-09-20', field: ['johns', 'waters', 'staksrud'], result: 'Champions: Johns/Waters (MX), Waters (WS), Haworth (MS), Alshon/Daescu (MD), Rohrabacher/Todd (WD)' }],
+['ppa', '2026-09-30', '17:00', 'Rate Las Vegas Open', 'PickleballTV', 'Las Vegas · PPA Open (1,000) · finals Oct 4 on Tennis Channel', { endDate: '2026-10-04' }],
+
+// === PLAYERS
+// LPGA: Rolex Rankings top 8, week 39 (Sep 21, 2026)
+['korda', 'Nelly Korda', 'Rolex No. 1', null, 'lpga'], ['thitikul', 'Jeeno Thitikul', 'Rolex No. 2', null, 'lpga'],
+['hryu', 'Haeran Ryu', 'Rolex No. 3', null, 'lpga'], ['hjkim', 'Hyo Joo Kim', 'Rolex No. 4', null, 'lpga'],
+['yamashita', 'Miyu Yamashita', 'Rolex No. 5', null, 'lpga'], ['ryin', 'Ruoning Yin', 'Rolex No. 6', null, 'lpga'],
+['woad', 'Lottie Woad', 'Rolex No. 7', null, 'lpga'], ['hull', 'Charley Hull', 'Rolex No. 8', null, 'lpga'],
+// DP World Tour: Race to Dubai positions after BMW PGA (McIlroy is No. 2; reuse existing 'mcilroy', 'fitzpatrick', 'fleetwood')
+['reed', 'Patrick Reed', 'Race to Dubai No. 1', null, 'dpwt'], ['rai', 'Aaron Rai', 'Race to Dubai No. 4', null, 'dpwt'],
+['rfox', 'Ryan Fox', 'Race to Dubai No. 5', null, 'dpwt'],
+// LIV Golf: final 2026 individual standings top 8
+['rahm', 'Jon Rahm', 'LIV No. 1 · Legion XIII', null, 'liv'], ['dechambeau', 'Bryson DeChambeau', 'LIV No. 2 · Crushers GC', null, 'liv'],
+['niemann', 'Joaquin Niemann', 'LIV No. 3 · Torque GC', null, 'liv'], ['herbert', 'Lucas Herbert', 'LIV No. 4 · Ripper GC', null, 'liv'],
+['hatton', 'Tyrrell Hatton', 'LIV No. 5 · Legion XIII', null, 'liv'], ['detry', 'Thomas Detry', 'LIV No. 6 · 4Aces GC', null, 'liv'],
+['akim', 'Anthony Kim', 'LIV No. 7 · 4Aces GC', null, 'liv'], ['sgarcia', 'Sergio Garcia', 'LIV No. 8 · Fireballs GC', null, 'liv'],
+
+// === RECORDS
+// none: no league in this batch has a standings table in progress at the prototype clock
+// (Prem Round 1 starts Sep 25; CPL season is over; the rest are offseason)
+
+// === NETWORKS_ADDED
+PickleballTV   // PPA's own streaming service (PBTV); streams every court at PPA events
+
+// === NOTES
+// ---- Corrections to existing data.js notes
+// slams offweek: 'Next on ESPN: Australian Open in January'. CORRECT. The 2027 AO main draw runs Jan 17–31 (opening week Jan 11–16).
+//   If you want it sharper: 'Next on ESPN: Australian Open, Jan 17–31'.
+// wicricket offweek: 'No ESPN matches this week'. TECHNICALLY TRUE BUT MISLEADING. West Indies are touring India: 1st ODI Sun Sep 27 in
+//   Thiruvananthapuram (India won by 8 wkts), 2nd ODI Wed Sep 30 in Guwahati, 3rd ODI Oct 3 in Mullanpur, then 5 T20Is Oct 6–17. All start 14:00 IST
+//   (04:30 ET) and air on Willow in the US, not ESPN. Suggested text: 'In India for 3 ODIs from Sep 27 · on Willow, not ESPN'.
+//   Optional rows (would need an IND|India|#1C4E9C team added to wicricket; the Sep 27 row gets no score because it is after the clock):
+//   ['wicricket', '2026-09-27', '04:30', 'WI', 'IND', 'Willow', '1st ODI · Thiruvananthapuram'],
+//   ['wicricket', '2026-09-30', '04:30', 'WI', 'IND', 'Willow', '2nd ODI · Guwahati'],
+// mlp offweek: 'Season wrapped in August'. CORRECT. The MLP Finals were Aug 28–30 in Central Park, NYC; New Jersey 5s swept St. Louis Shock 2-0.
+//   Optional sharper text: 'Season complete · New Jersey 5s won the title Aug 30'.
+// pll offweek: 'Season complete · Waterdogs won the title Sep 20'. CORRECT. Philadelphia Waterdogs beat the Denver Outlaws 14–4 on Sep 20 at
+//   Sports Illustrated Stadium, Harrison NJ (matches the existing game row).
+//
+// ---- Golf
+// LPGA: no event Sep 17–20 (the Solheim Cup was Sep 11–13). Walmart NW Arkansas is 54 holes, Fri Sep 25 – Sun Sep 27, so every round is after the
+//   clock and gets no result. Rolex top 8 in the field: Yamashita (5), Woad (7), Hull (8). Korda, Thitikul, Ryu, Kim and Yin did not play.
+//   UNVERIFIED: Golf Channel's airtimes for this event (sources disagreed), so times are null. Real winner: Yuna Nishimura (-21), wire to wire; not included.
+// DPWT: round leaders come from ESPN hole-by-hole data (golf/eur). The Spaun win and Gerard's R2 lead are confirmed by DP World Tour, CBS and PGA Tour
+//   articles. Reed withdrew injured during R2 at Wentworth. Fleetwood missed the cut at both events.
+//   BMW PGA times = Golf Channel 7:00 AM ET all four days (CBS Sports). Open de France R1/R2 = Golf Channel from 7:30 AM ET (Golf Monthly, DP World Tour).
+//   R3/R4 airtimes conflicted between sources, so they are null. Race to Dubai: Reed No. 1, McIlroy No. 2, Rai No. 4, Fox No. 5 after Wentworth
+//   (DP World Tour article). No. 3 isn't confirmed for that date, so it's left out.
+// LIV: the 2026 season ended at LIV Golf Indianapolis in August (La Sasso won the event, Legion XIII won the team title). The Michigan team finale was
+//   cancelled. The 2027 schedule and start date have not been announced (league is restructuring), so no date in the offweek note.
+//   Standings are from livgolf.com. A golfmagic page showed a different, stale table; I ignored it.
+// New player id 'sgarcia' (not 'garcia') and 'akim' to avoid generic collisions. None of the new ids clash with data.js.
+//
+// ---- Tennis
+// Dates/times = first main-draw match in ET from ESPN's scoreboard (tennis/atp, tennis/wta). Tokyo and Beijing ATP main draws start Wed Sep 30 at 11 AM
+//   local (atptour.com), which is Sep 29 22:00 / 23:00 ET. WTA Beijing main draw starts Sep 30 local. The WTA day-session time wasn't confirmed, so its
+//   row uses the local date and null time (probably the evening of Sep 29 ET).
+// Laver Cup: Sep 25–27 at The O2, London. Sessions 1 PM and 7 PM BST Fri/Sat (08:00 and 14:00 ET) and 12 PM BST Sun (07:00 ET). US TV is Tennis Channel.
+//   Of the existing ids, only Zverev and Alcaraz played. Shelton withdrew Sep 17 (replaced by Nakashima). Sinner was not on Team Europe and withdrew
+//   from Beijing. Real result: Europe won 13–5 (after the clock, not included).
+// Tokyo field: Alcaraz (No. 1 seed) and Tiafoe (listed as No. 2 seed on ESPN) are in the draw. Shelton was on the Tokyo entry list but is not in the draw.
+// WTA Beijing: Pegula WITHDREW (back injury), so she is not in the field. Sabalenka, Rybakina, Gauff and Andreeva have first-round byes.
+// Andreeva played Singapore and lost the QF to Leylah Fernandez on Sep 25 (after the clock). Fernandez won the title.
+// Guadalajara (Sep 13–19) and SP Open (Sep 15–21) start before the window but finish inside it. The SP Open final was played Monday Sep 21.
+// Left out: ATP Challengers and WTA 125s (Valencia, Caldas da Rainha, Ljubljana, Tolentino, Porto, Ankara, Jingshan, Adana). Say if you want them.
+// US TV: Tennis Channel is the ATP/WTA tour rightsholder. Sportsmediawatch lists Chengdu, Hangzhou, Tokyo and Beijing on Tennis Channel; the Laver Cup is on
+//   Tennis Channel per lavercup.com. For Seoul/Singapore/Guadalajara/São Paulo I assumed Tennis Channel and did not check each one.
+//
+// ---- Pickleball
+// Official PPA calendar (ppatour.com event data): the Sep 14–20 PPA stop was the Veolia Arizona Open in Mesa, AZ (a third-party blog wrongly lists a
+//   'Veolia Cincinnati Cup' that week). Next tour stop is the Rate Las Vegas Open, Sep 28 – Oct 4. The pro round of 32 starts Sep 30 at 2 PM PDT (17:00 ET).
+//   PickleballTV windows start Thu Oct 1, and the finals Sun Oct 4 are also on Tennis Channel.
+// Arizona Open champions per The Dink recap: MX Johns/Waters d. Rohrabacher/Alshon 11-3, 11-6. WS Waters d. Kate Fahey. MS Chris Haworth d. Staksrud
+//   10-12, 11-9, 11-6. MD Alshon/Daescu d. Acevedo/Funemizu. WD Rohrabacher/Todd d. Dizon/Black. The Arizona Open row uses the event start date (Sep 14)
+//   and null time; PBTV streams all courts. Which rounds went to FS1/FS2 wasn't confirmed.
+// Left out: PPA Challengers Grand Rapids (Sep 18–20) and Charlotte (Sep 25–27), and PPA Europe Barcelona (Sep 23–27). All are lower tier.
+// Existing pickleball ids are league 'mlp'. Only johns, waters and staksrud are confirmed in the Arizona field. The Las Vegas field isn't published per player yet.
+//
+// ---- Team leagues
+// CPL 2026 (Aug 7 – Sep 20, 7 teams incl. new Jamaica Kingsmen): scores from ESPN's cricket API (league 8623). Wikipedia's summary mixed up the Q1/Q2 scores,
+//   so I didn't use it. The Eliminator (Sep 16, JAK beat BT) is before the window. US TV = Willow.
+// IPL 2026 final May 31: RCB beat Gujarat Titans by 5 wkts (back-to-back titles). MLC 2026 final Jul 18: LA Knight Riders beat Washington Freedom by 1 run.
+// Premiership 2026-27 opens Sep 25. US streaming is FloRugby, so network = 'FloSports'. Newcastle are now 'Newcastle Red Bulls' (ESPN still shows
+//   'Falcons'). Times: 19:45 BST = 14:45 ET, 15:05 = 10:05, 17:30 = 12:30, 15:00 = 10:00. Real results exist but are after the clock, so not included.
+// Rugby Championship: nothing in ESPN's feed Jul–Oct 2026. In 2026 the southern Tests in Aug–Sep were NZ's tour of South Africa (last Test Sep 12)
+//   and Australia's tour of Argentina (to Sep 5), both before the window. I modeled 'rugbychamp' as World Rugby's Nations Championship, with the
+//   Rest-of-World conference as teams. Its November window starts Nov 6, with finals at Twickenham Nov 27–29. RENAME to 'Rugby Championship' if you prefer.
+// Six Nations 2027 opens Fri Feb 5 (Ireland v England, Dublin) and ends Mar 13.
+// LOVB: the 2026-27 season opens Thu Dec 17 in San Antonio (Nebraska vs Austin). 10 teams incl. expansion Los Angeles Orbit, Miami, Minnesota, SF Signal.
+//   2026 champion: LOVB Austin (Apr 18). ESPN had 28 matches in 2026 (ESPN2/ESPN+), so espn: 'some'.
+// MLV: 2026 champion Dallas Pulse (beat Omaha). The 2027 roster per provolleyball.com nav: 8 current teams + DC Flight, Minnesota Forge, NorCal Rumble, plus a
+//   Los Angeles team with no name yet (left out). The 2027 start date is not announced. TV is CBSSN/Roku/ION/Vice, not ESPN.
+// AUSL: 6 teams. Utah Talons beat Chicago Bandits in the final (Jul 25–26). ESPN networks carried up to 50 games, so espn: true.
+// NCAA men's lacrosse: top 12 = final 2026 Inside Lacrosse poll (ESPN rankings API, May 27). Princeton beat Notre Dame 16–9 for the title.
+//   shortName(): add 'Blue Jays' and 'Big Red' to COLLEGE_MASCOT2, or 'Johns Hopkins Blue Jays' becomes 'Johns Hopkins Blue' and 'Cornell Big Red' becomes 'Cornell Big'.
+// NLL: the 2026-27 season opens Fri Nov 27 (Saskatchewan at Oshawa, 7:30 PM ET), 12 clubs. Ottawa Black Bears and Philadelphia Wings are not on the
+//   schedule, so they are left out. Colors are from ESPN's NLL team API. ESPN+/ESPN is the US partner through 2025-26; the 2026-27 US deal wasn't confirmed.
+//   shortName(): add 'Desert Dogs' to PRO_NICK2.
+// shortName() only handles the league ids listed in data.js. The 'pro'/'college' leagues above must be added to those arrays.
+// COLORS: NCAAML, NLL and national-team colors are standard/ESPN values. Colors for LOVB, MLV, AUSL, CPL, IPL, MLC and Prem teams are best guesses and
+//   were NOT checked against brand guides. CPL's ABF/BT/SKNP/SLK are ESPN's values (BT pink dates from the Barbados Royals era). Review before shipping.
+// League colors are brand approximations.
+
+// === SOURCES
+// https://site.api.espn.com/apis/site/v2/sports/golf/lpga/scoreboard?dates=20260915-20261002
+// https://site.api.espn.com/apis/site/v2/sports/golf/eur/scoreboard?dates=20260915-20261002
+// https://site.api.espn.com/apis/site/v2/sports/golf/liv/scoreboard
+// https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard?dates=20260915-20261002
+// https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260915-20261002
+// https://site.api.espn.com/apis/site/v2/sports/cricket/8623/scoreboard?dates=20260917 (…0918, 0920)
+// https://site.api.espn.com/apis/site/v2/sports/rugby/267979/scoreboard?dates=20260925 (…0926, 0927)
+// https://site.api.espn.com/apis/site/v2/sports/rugby/244293/scoreboard (Jul–Oct 2026 scan: no events)
+// https://site.api.espn.com/apis/site/v2/sports/lacrosse/mens-college-lacrosse/rankings
+// https://site.api.espn.com/apis/site/v2/sports/lacrosse/nll/teams
+// https://media.lpga.com/docs/librariesprovider3/2026-walmart/wednesday-pre-tournament-notes---2026-walmart-nw-arkansas-championship.pdf
+// https://golftoday.co.uk/rolex-womens-world-golf-rankings-39-2026/
+// https://www.cbssports.com/golf/news/2026-bmw-pga-championship-tv-channel-tee-times-where-to-watch-dp-world-tour/
+// https://www.europeantour.com/dpworld-tour/news/articles/detail/with-this-win-jj-spaun-2026-bmw-pga-championship/
+// https://www.europeantour.com/dpworld-tour/rolex/news/articles/detail/all-to-play-for-rory-mcilroy-cuts-into-patrick-reed-s-race-to-dubai-lead-with-runner-up-finish-at-wentworth/
+// https://www.europeantour.com/dpworld-tour/fedex-open-de-france-2026/tv-schedule
+// https://www.golfmonthly.com/news/open-de-france-2026-tee-times-rounds-one-and-two
+// https://www.livgolf.com/standings/2026/players
+// https://www.livgolf.com/news/liv-golf-indianapolis-2026-results-final-recap
+// https://en.wikipedia.org/wiki/2026_Laver_Cup
+// https://lavercup.com/schedule
+// https://www.tennisnerd.net/news/where-to-watch-the-2026-laver-cup-tv-channels-and-live-streaming/69559
+// https://www.atptour.com/en/news/beijing-atp-500-2026-history-draw-schedule
+// https://www.atptour.com/en/news/tokyo-atp-500-2026-history-draw-schedule
+// https://www.atptour.com/en/news/sinner-beijing-2026-withdrawal
+// https://www.sportsmediawatch.com/tv-schedules/tennis/laver-cup-tv-schedule/
+// https://www.wtatennis.com/news/4576359/asian-swing-2026-preview-dates-draws-prize-money-and-everything-you-need-to-know
+// https://www.wtatennis.com/news/4581969/jessica-pegula-defending-champion-amanda-anisimova-withdraw-from-china-open-with-injuries
+// https://www.ppatour.com/events/2026/veolia-arizona-open/
+// https://www.ppatour.com/events/2026/rate-las-vegas-open/
+// https://www.thedinkpickleball.com/ppa-arizona-open-recap-six-championship-points-saved-double-gold-for-alw-and-haworth-owns-mesa/
+// https://thekitchenpickle.com/blogs/news/2026-major-league-pickleball-finals-recap-new-jersey-5s-st-louis-shock/
+// https://premierlacrosseleague.com/articles/waterdogs-dominate-outlaws-to-win-second-pll-championship
+// https://ausopen.com/articles/news/australian-open-2027-dates-announced
+// https://en.wikipedia.org/wiki/West_Indian_cricket_team_in_India_in_2026%E2%80%9327
+// https://www.wisden.com/series/india-vs-west-indies-m-2026/cricket-news/ind-vs-wi-odis-live-streaming-and-tv-channels-where-to-watch-live-and-match-timings-for-west-indies-tour-of-india
+// https://en.wikipedia.org/wiki/2026_Caribbean_Premier_League
+// https://www.crickettimes.com/2026/08/caribbean-premier-league-cpl-2026-broadcast-live-streaming-when-and-where-to-watch-in-india-us-uk-australia-pakistan-other-countries/
+// https://en.wikipedia.org/wiki/2026_Indian_Premier_League_final
+// https://en.wikipedia.org/wiki/2026_Major_League_Cricket_final
+// https://www.rugbyworld.com/how-to-watch/prem-rugby-2026-27-185697
+// https://en.wikipedia.org/wiki/2026_Nations_Championship
+// https://www.sixnationsrugby.com/en/m6n/news/mens-six-nations-2027-fixtures-and-schedule-confirmed
+// https://www.lovb.com/2027/schedule
+// https://en.wikipedia.org/wiki/LOVB_Pro
+// https://espnpressroom.com/us/press-releases/2026/01/espn-presents-lovbs-2026-professional-volleyball-season/
+// https://provolleyball.com/
+// https://en.wikipedia.org/wiki/Major_League_Volleyball_(2026)
+// https://en.wikipedia.org/wiki/2026_AUSL_season
+// https://www.ncaa.com/news/lacrosse-men/article/2026-05-25/2026-di-mens-lacrosse-championship-bracket-schedule-scores
+// https://www.nll.com/news/2026-27-nll-regular-season-schedule/
+// https://www.nll.com/espn-broadcast-schedule/
