@@ -1,0 +1,198 @@
+// === LEAGUES
+{ id: 'epl', sport: 'soccer', name: 'Premier League', short: 'EPL', color: '#3D195B', espn: false, popular: true, offweek: 'International break · Matchweek 6 starts Oct 10' },
+{ id: 'mls', sport: 'soccer', name: 'MLS', short: 'MLS', color: '#001F5B', espn: false },
+{ id: 'ucl', sport: 'soccer', name: 'UEFA Champions League', short: 'UCL', color: '#0E1E5B', espn: false, offweek: 'League phase resumes with Matchday 2 on Oct 13–14' },
+{ id: 'bund', sport: 'soccer', name: 'Bundesliga', short: 'BUND', color: '#D20515', espn: false, offweek: 'International break · Matchday 5 starts Oct 9' },
+
+// === TEAM_ROWS
+epl: `ARS|Arsenal|#EF0107;AVL|Aston Villa|#670E36;BOU|Bournemouth|#DA291C;BRE|Brentford|#E30613;BHA|Brighton & Hove Albion|#0057B8;
+CHE|Chelsea|#034694;COV|Coventry City|#59CBE8;CRY|Crystal Palace|#1B458F;EVE|Everton|#003399;FUL|Fulham|#000000;
+HUL|Hull City|#F5A12D;IPS|Ipswich Town|#0044A9;LEE|Leeds United|#1D428A;LIV|Liverpool|#C8102E;MCI|Manchester City|#6CABDD;
+MUN|Manchester United|#DA291C;NEW|Newcastle United|#241F20;NFO|Nottingham Forest|#DD0000;SUN|Sunderland|#EB172B;TOT|Tottenham Hotspur|#132257`,
+mls: `ATL|Atlanta United FC|#9D2235;ATX|Austin FC|#00B140;MTL|CF Montréal|#0033A1;CLT|Charlotte FC|#0085CA;CHI|Chicago Fire FC|#C8102E;
+COL|Colorado Rapids|#8A2432;CLB|Columbus Crew|#FEDD00;DC|D.C. United|#000000;CIN|FC Cincinnati|#003087;DAL|FC Dallas|#C6093B;
+HOU|Houston Dynamo FC|#FF6B00;MIA|Inter Miami CF|#F7B5CD;LA|LA Galaxy|#00245D;LAFC|LAFC|#C39E6D;MIN|Minnesota United FC|#8CD2F4;
+NSH|Nashville SC|#ECE83A;NE|New England Revolution|#022166;NYC|New York City FC|#6CACE4;ORL|Orlando City SC|#633492;PHI|Philadelphia Union|#071B2C;
+POR|Portland Timbers|#004812;RSL|Real Salt Lake|#B30838;RBNY|Red Bull New York|#ED1E36;SD|San Diego FC|#697A7C;SJ|San Jose Earthquakes|#0067B1;
+SEA|Seattle Sounders FC|#5D9741;SKC|Sporting Kansas City|#93B1D7;STL|St. Louis CITY SC|#EC1458;TOR|Toronto FC|#B81137;VAN|Vancouver Whitecaps FC|#00245E`,
+ucl: `AEK|AEK Athens|#FFD100;ROMA|AS Roma|#8E1F2F;ARS|Arsenal|#EF0107;AVL|Aston Villa|#670E36;ATM|Atlético Madrid|#CB3524;
+BAR|FC Barcelona|#A50044;FCB|Bayern Munich|#DC052D;BOD|Bodø/Glimt|#FCEE33;BVB|Borussia Dortmund|#FDE100;BRU|Club Brugge|#0078C1;
+COMO|Como|#1E3A8A;FCP|FC Porto|#003893;FEN|Fenerbahçe|#163962;FEY|Feyenoord|#E30613;GAL|Galatasaray|#A90432;
+INT|Inter|#010E80;LASK|LASK|#000000;RCL|Lens|#E91514;LIL|Lille|#E01E13;LIV|Liverpool|#C8102E;
+MCI|Manchester City|#6CABDD;MUN|Manchester United|#DA291C;NAP|Napoli|#12A0D7;PSG|Paris Saint-Germain|#004170;PSV|PSV Eindhoven|#ED1C24;
+RBL|RB Leipzig|#DD0741;BET|Real Betis|#288A00;RMA|Real Madrid|#FEBE10;SAB|Sabah|#000000;SHK|Shakhtar Donetsk|#F26522;
+SLP|Slavia Prague|#DC1F26;SLB|Slovan Bratislava|#74B4E3;SCP|Sporting CP|#008057;VFB|VfB Stuttgart|#E32219;VIK|Viking FK|#002F6C;VIL|Villarreal|#FFE667`,
+bund: `FCB|Bayern Munich|#DC052D;BVB|Borussia Dortmund|#FDE100;LEV|Bayer Leverkusen|#E32221;RBL|RB Leipzig|#DD0741;SGE|Eintracht Frankfurt|#E1000F;
+VFB|VfB Stuttgart|#E32219;SCF|SC Freiburg|#E2001A;FCA|FC Augsburg|#BA3733;MAI|Mainz 05|#C3141E;SVW|Werder Bremen|#1D9053;
+ELV|SV Elversberg|#000000;SCH|Schalke 04|#004D9D;PAD|SC Paderborn|#005CA9;KOE|1. FC Köln|#ED1C24;TSG|TSG Hoffenheim|#1961B5;
+HSV|Hamburger SV|#0A3F86;FCU|Union Berlin|#EB1923;BMG|Borussia Mönchengladbach|#000000`,
+
+// === SHORTNAME
+epl: club
+mls: club
+ucl: club
+bund: club
+
+// === GAME_LEN
+epl: 115,
+mls: 115,
+ucl: 115,
+bund: 115,
+laliga: 115,
+nwsl: 115,
+ligamx: 115,
+
+// === GAME_ROWS
+// ---- Premier League, Matchweek 5 (last round before the Sep 21–Oct 6 FIFA window)
+['epl', '2026-09-18', '15:00', 'CHE', 'BRE', 'USA Network', 'Matchweek 5', { score: [0, 3] }],
+['epl', '2026-09-19', '07:30', 'AVL', 'TOT', 'USA Network', 'Matchweek 5', { score: [3, 2] }],
+['epl', '2026-09-19', '10:00', 'ARS', 'BHA', 'USA Network', 'Matchweek 5', { score: [0, 3] }],
+['epl', '2026-09-19', '10:00', 'HUL', 'NEW', 'Peacock', 'Matchweek 5', { score: [1, 2] }],
+['epl', '2026-09-19', '10:00', 'IPS', 'EVE', 'Peacock', 'Matchweek 5', { score: [0, 1] }],
+['epl', '2026-09-19', '12:30', 'COV', 'NFO', 'NBC', 'Matchweek 5', { score: [1, 0] }],
+['epl', '2026-09-20', '09:00', 'CRY', 'LEE', 'Peacock', 'Matchweek 5', { score: [0, 0] }],
+['epl', '2026-09-20', '09:00', 'LIV', 'BOU', 'USA Network', 'Matchweek 5', { score: [1, 0] }],
+['epl', '2026-09-20', '09:00', 'SUN', 'MCI', 'Peacock', 'Matchweek 5', { score: [3, 5] }],
+['epl', '2026-09-20', '11:30', 'MUN', 'FUL', 'NBC', 'Matchweek 5', { score: [1, 1] }],
+// ---- Bundesliga, Matchday 4 (all on Fandango in the US per ESPN listings)
+['bund', '2026-09-18', '14:30', 'FCU', 'FCB', 'Fandango', 'Matchday 4', { score: [0, 7] }],
+['bund', '2026-09-19', '09:30', 'FCA', 'SVW', 'Fandango', 'Matchday 4', { score: [2, 3] }],
+['bund', '2026-09-19', '09:30', 'KOE', 'HSV', 'Fandango', 'Matchday 4', { score: [1, 2] }],
+['bund', '2026-09-19', '09:30', 'MAI', 'BMG', 'Fandango', 'Matchday 4', { score: [4, 3] }],
+['bund', '2026-09-19', '09:30', 'SCF', 'SGE', 'Fandango', 'Matchday 4', { score: [2, 2] }],
+['bund', '2026-09-19', '12:30', 'BVB', 'VFB', 'Fandango', 'Matchday 4', { score: [1, 0] }],
+['bund', '2026-09-20', '09:30', 'RBL', 'LEV', 'Fandango', 'Matchday 4', { score: [0, 2] }],
+['bund', '2026-09-20', '11:30', 'ELV', 'SCH', 'Fandango', 'Matchday 4', { score: [0, 0] }],
+['bund', '2026-09-20', '13:30', 'TSG', 'PAD', 'Fandango', 'Matchday 4', { score: [1, 3] }],
+// ---- LaLiga (existing abbreviations): end of Matchday 6 (midweek) + Matchday 7
+['laliga', '2026-09-17', '13:00', 'GET', 'BET', 'ESPN+', 'Matchday 6', { score: [0, 1] }],
+['laliga', '2026-09-17', '15:30', 'VIL', 'MCF', 'ESPN+', 'Matchday 6', { score: [3, 1] }],
+['laliga', '2026-09-18', '15:00', 'ELC', 'ESP', 'ESPN+', 'Matchday 7', { score: [3, 1] }],
+['laliga', '2026-09-19', '08:00', 'RAY', 'OSA', 'ESPN+', 'Matchday 7', { score: [1, 1] }],
+['laliga', '2026-09-19', '10:15', 'ALA', 'ATH', 'ESPN+', 'Matchday 7', { score: [0, 0] }],
+['laliga', '2026-09-19', '12:30', 'RAC', 'CEL', 'ESPN+', 'Matchday 7', { score: [0, 5] }],
+['laliga', '2026-09-19', '15:00', 'BAR', 'SEV', 'ESPN+', 'Matchday 7', { score: [3, 1] }],
+['laliga', '2026-09-20', '08:00', 'MCF', 'GET', 'ESPN+', 'Matchday 7', { score: [0, 1] }],
+['laliga', '2026-09-20', '10:15', 'RMA', 'ATM', 'ESPN2', 'Matchday 7 · Madrid derby', { score: [1, 2], tags: ['rivalry', 'marquee'] }],
+['laliga', '2026-09-20', '12:30', 'BET', 'DEP', 'ESPN+', 'Matchday 7', { score: [1, 1] }],
+['laliga', '2026-09-20', '12:30', 'LEV', 'VIL', 'ESPN+', 'Matchday 7', { score: [1, 3] }],
+['laliga', '2026-09-20', '15:00', 'RSO', 'VAL', 'ESPN+', 'Matchday 7', { score: [3, 2] }],
+// ---- MLS: curated results Sep 17–23
+['mls', '2026-09-18', '19:30', 'RBNY', 'NYC', 'Apple TV', 'Hudson River Derby · Yankee Stadium', { score: [1, 0], tags: ['rivalry'] }],
+['mls', '2026-09-19', '19:30', 'LAFC', 'SJ', 'Apple TV', "Levi's Stadium", { score: [2, 2] }],
+['mls', '2026-09-19', '20:30', 'ATX', 'DAL', 'Apple TV', 'Texas derby', { score: [0, 0], tags: ['rivalry'] }],
+['mls', '2026-09-19', '20:30', 'LA', 'MIN', 'Apple TV', '', { score: [3, 2] }],
+['mls', '2026-09-19', '20:30', 'PHI', 'SKC', 'Apple TV', '', { score: [4, 3] }],
+['mls', '2026-09-19', '21:30', 'CHI', 'NSH', 'Apple TV', '', { score: [0, 3] }],
+['mls', '2026-09-19', '21:30', 'SEA', 'COL', 'Apple TV', '', { score: [3, 3] }],
+['mls', '2026-09-20', '19:00', 'SD', 'MIA', 'Apple TV', '', { score: [2, 2] }],
+['mls', '2026-09-23', '21:30', 'RSL', 'SEA', 'Apple TV', 'Midweek', { score: [0, 2] }],
+// ---- MLS: every game Sep 24–30 (no scores: after the prototype clock)
+['mls', '2026-09-26', '19:30', 'CHI', 'CLT', 'Apple TV', ''],
+['mls', '2026-09-26', '19:30', 'CIN', 'MTL', 'Apple TV', ''],
+['mls', '2026-09-26', '19:30', 'NYC', 'ATL', 'Apple TV', ''],
+['mls', '2026-09-26', '19:30', 'ORL', 'PHI', 'Apple TV', ''],
+['mls', '2026-09-26', '20:30', 'LAFC', 'DAL', 'Apple TV', ''],
+['mls', '2026-09-26', '20:30', 'MIN', 'SEA', 'Apple TV', ''],
+['mls', '2026-09-26', '20:30', 'SD', 'ATX', 'Apple TV', ''],
+['mls', '2026-09-26', '20:30', 'SKC', 'HOU', 'Apple TV', ''],
+['mls', '2026-09-26', '20:30', 'TOR', 'NSH', 'Apple TV', ''],
+['mls', '2026-09-26', '21:30', 'NE', 'RSL', 'Apple TV', ''],
+['mls', '2026-09-26', '22:30', 'COL', 'LA', 'Apple TV', ''],
+['mls', '2026-09-26', '22:30', 'DC', 'VAN', 'Apple TV', ''],
+['mls', '2026-09-26', '22:30', 'POR', 'SJ', 'Apple TV', ''],
+['mls', '2026-09-27', '19:00', 'MIA', 'CLB', 'Apple TV', ''],
+['mls', '2026-09-30', '19:30', 'STL', 'RBNY', 'Apple TV', 'Midweek'],
+
+// === EVENT_ROWS
+
+// === PLAYERS
+['haaland', 'Erling Haaland', 'FW', 'epl-MCI'],
+['saka', 'Bukayo Saka', 'FW', 'epl-ARS'],
+['palmer', 'Cole Palmer', 'MF', 'epl-CHE'],
+['messi', 'Lionel Messi', 'FW', 'mls-MIA'],
+['son', 'Son Heung-min', 'FW', 'mls-LAFC'],
+['muller', 'Thomas Müller', 'MF', 'mls-VAN'],
+['kane', 'Harry Kane', 'FW', 'bund-FCB'],
+['musiala', 'Jamal Musiala', 'MF', 'bund-FCB'],
+['guirassy', 'Serhou Guirassy', 'FW', 'bund-BVB'],
+['dembele', 'Ousmane Dembélé', 'FW', 'ucl-PSG'],
+['lautaro', 'Lautaro Martínez', 'FW', 'ucl-INT'],
+
+// === RECORDS
+epl: `MCI|5-0-0|15;ARS|4-0-1|12;BHA|3-1-1|10;BRE|2-3-0|9;LEE|2-3-0|9;LIV|2-3-0|9;EVE|2-3-0|9;HUL|2-2-1|8;NEW|2-2-1|8;CHE|2-1-2|7;IPS|2-0-3|6;MUN|1-2-2|5;NFO|1-2-2|5;SUN|1-1-3|4;CRY|1-1-3|4;AVL|1-1-3|4;BOU|0-3-2|3;COV|1-0-4|3;FUL|0-2-3|2;TOT|0-2-3|2`,
+bund: `BVB|4-0-0|12;FCB|3-1-0|10;SCF|3-1-0|10;FCA|2-1-1|7;LEV|2-1-1|7;MAI|2-1-1|7;ELV|2-1-1|7;SVW|2-1-1|7;RBL|2-0-2|6;SGE|1-2-1|5;SCH|1-2-1|5;PAD|1-1-2|4;KOE|1-1-2|4;TSG|1-0-3|3;VFB|1-0-3|3;HSV|1-0-3|3;FCU|0-1-3|1;BMG|0-0-4|0`,
+laliga: `BAR|7-0-0|21;ATM|5-1-1|16;BET|5-1-1|16;RMA|5-0-2|15;SEV|4-1-2|13;ALA|3-2-2|11;DEP|2-4-1|10;RSO|3-1-3|10;VIL|2-2-3|8;ATH|2-2-2|8;GET|2-2-3|8;RAY|2-2-3|8;OSA|2-2-3|8;CEL|1-4-2|7;ESP|2-1-4|7;RAC|2-1-4|7;LEV|1-2-3|5;ELC|1-2-4|5;VAL|1-1-5|4;MCF|0-3-4|3`,
+mls: `NSH|17-6-3|57;VAN|15-4-6|49;NE|14-4-8|46;MIA|12-10-4|46;HOU|13-5-8|44;STL|12-8-6|44;DAL|12-8-6|44;CLT|12-7-7|43;SJ|12-6-8|42;LAFC|11-8-8|41;CHI|11-6-8|39;COL|11-3-12|36;PHI|10-6-10|36;ORL|10-4-12|34;RBNY|9-6-11|33;CIN|8-9-8|33;LA|8-9-10|33;POR|9-5-12|32;NYC|8-8-10|32;SEA|8-8-9|32;SD|8-7-11|31;ATX|7-9-10|30;RSL|8-5-13|29;MIN|7-8-11|29;DC|6-11-8|29;TOR|6-11-9|29;CLB|7-5-14|26;ATL|7-5-14|26;MTL|5-6-15|21;SKC|5-3-17|18`,
+nwsl: `GFC|15-6-4|51;WAS|14-4-7|46;SD|14-3-8|45;UTA|13-3-9|42;POR|12-6-7|42;LA|11-6-8|39;NC|12-3-10|39;KC|11-5-9|38;SEA|11-4-10|37;DEN|9-8-8|35;ORL|9-3-13|30;HOU|8-5-12|29;BAY|7-5-13|26;BOS|7-5-13|26;LOU|7-2-16|23;CHI|5-2-18|17`,
+ligamx: `TOL|6-1-2|19;GDL|5-3-1|18;AME|5-2-1|17;CAZ|5-0-4|15;QRO|4-2-2|14;LEO|4-2-3|14;TIJ|4-2-2|14;PUE|4-2-3|14;ATS|4-2-3|14;MTY|4-1-3|13;PAC|3-3-3|12;UNAM|3-3-3|12;ASL|2-3-4|9;ATL|1-5-3|8;NCX|2-2-5|8;UANL|1-4-4|7;SAN|2-1-6|7;JUA|1-0-8|3`,
+
+// === NETWORKS_ADDED
+'Fandango'   // free ad-supported streamer (ex-Vudu); Versant's Bundesliga English-language home from 2026-27
+'Roku'       // only needed if you add the missing NWSL row NC@UTA (see NOTES)
+
+// === NOTES
+// FIFA "XL" international window: the Sep and Oct windows were merged into one, Sep 21 – Oct 6, 2026. The EPL, LaLiga and
+//   Bundesliga all stop after Sep 20. EPL restarts Oct 10 (Matchweek 6), Bundesliga Oct 9 (Matchday 5), LaLiga Oct 9.
+//   So EPL, Bundesliga and LaLiga have games only Sep 17–20 in the window, all finished with scores. No games after the prototype clock.
+//   That's why epl/bund carry an offweek note even though they have games in the window. Drop it if the app treats offweek as "no games at all".
+// UCL: Matchday 1 was Sep 8–10 (18 games, CBS/CBSSN/Paramount+). Matchday 2 is Oct 13–14. No UCL games Sep 17–30, so offweek, no GAME_ROWS.
+//   RECORDS omitted: only 1 of 8 league-phase games played.
+//   The 36 clubs are the ESPN/UEFA league-phase list. UCL abbreviations match my epl/bund codes (MCI, MUN, FCB, BVB, RBL, VFB) and the
+//   existing laliga codes (BAR, RMA, ATM, BET, VIL), so they read the same across leagues.
+// LaLiga: the "no games" premise was wrong for the first half of the window. It played the end of Matchday 6 (Sep 17) and all of Matchday 7 (Sep 18–20).
+//   12 rows above. The existing offweek note "International break · no matches this week" is still true for Sep 21–Oct 6.
+//   Consider changing it to "International break · returns Oct 9" and adding espn: true (every match is on ESPN+, plus ESPN Deportes and ESPN2 for the derby).
+//   All 20 clubs match data.js (DEP, RAC, MCF are the promoted sides), so no missing teams to add.
+//   The three Sep 16 matches (OSA@ATM, SEV@DEP, RAC@BAR) fall outside the window and were left out.
+//   ATH and LEV have played 6 games, everyone else 7. RECORDS follows ESPN's table order (LaLiga uses head-to-head tiebreaks).
+// Bundesliga US rights: NOT ESPN in 2026-27. Versant has the English-language rights (5 years): about 30+ games a season on USA Network,
+//   the rest free on Fandango. Telemundo/Universo/Peacock carry Spanish. ESPN listed Fandango for all 9 Matchday 4 games, and I found no
+//   USA Network pick that weekend, so all rows say 'Fandango'.
+// Bundesliga abbreviations are letters only (spec): LEV=Leverkusen (B04), MAI=Mainz (M05), SCH=Schalke (S04), PAD=Paderborn, FCB=Bayern, BVB=Dortmund.
+// EPL: I used MCI/MUN for the Manchester clubs (ESPN uses MNC/MAN). Promoted clubs: Coventry, Hull, Ipswich.
+//   Networks come from ESPN's US broadcast listing ('USA Net' = USA Network). Telemundo/Universo Spanish simulcasts are omitted.
+// MLS: no FOX/FS1 games in the window. ESPN lists every Sep 17–30 match as Apple TV only, and the Crew v Miami (Sep 27) previews confirm Apple TV exclusive.
+//   Sep 24–30 has 15 games: 14 on Sep 26–27 plus STL@RBNY Wed Sep 30. There's a lone midweek game Sep 23 (RSL@SEA).
+//   Sep 17–23 had 16 games, and I curated 9 of them.
+//   The club now plays as "Red Bull New York" (ESPN name), abbreviation RBNY.
+//   RECORDS is a single Supporters' Shield table (both conferences), ordered by points, then wins, GD, GF (MLS tiebreakers).
+//   Conferences: East = NSH NE MIA CLT CHI PHI ORL RBNY CIN NYC DC TOR CLB ATL MTL. West = VAN HOU STL DAL SJ LAFC COL LA POR SEA SD ATX RSL MIN SKC.
+// Sep 24 standings for mls/nwsl/ligamx: I took ESPN's table as of Sep 28 and subtracted every result played after the clock
+//   (Sep 25–27), then re-sorted with each league's tiebreakers. NWSL: points, GD, wins, GF (2026 NWSL rules). Liga MX: points, GD, GF.
+//   Liga MX: LEO and TIJ are fully level (14 pts, +2 GD, 12 GF). The order between them is arbitrary.
+//   EPL, Bundesliga and LaLiga played nothing Sep 21–28, so their current ESPN tables equal the Sep 24 tables.
+// Existing NWSL rows (Sep 25–27): all 7 dates, times, matchups and networks match ESPN.
+//   One game is missing: ['nwsl', '2026-09-27', '19:00', 'NC', 'UTA', 'Roku'].
+//   data.js also has no NWSL rows for Sep 17–23; ESPN shows 8 in the window (Sep 18–20).
+// Existing Liga MX rows (Jornada 10, Sep 25–27): all 9 dates, times and matchups match ESPN. No corrections.
+//   Networks are TBD there. ESPN gives no US broadcaster. Third-party listings put TOL@CAZ on TUDN/Univision/ViX (not in the allowed list).
+//   Jornada 9 (Sep 18–20, 9 games) isn't in data.js.
+// Players: I confirmed every club from the ESPN match-lineups of the Sep 18–20 games (UCL: Sep 8–10). Mohamed Salah was not in
+//   Liverpool's Sep 20 squad list, so he's left out. Existing player ids checked for clashes; there are none.
+// Team colors are the real primary club colors (ESPN's color field is often white/alternate for these clubs), chosen by hand.
+//   A few are approximations: San Diego FC, Como, Sabah, AEK.
+// ESPN's multi-day range query (dates=20260917-20260930) returns 400 now. I queried each day separately and deduped by event id.
+
+// === SOURCES
+// https://site.api.espn.com/apis/site/v2/sports/soccer/{eng.1,usa.1,uefa.champions,ger.1,esp.1,usa.nwsl,mex.1}/scoreboard?dates=202609DD (each day, Sep 16–30; UCL also Sep 1–15, Oct 13–15)
+// https://site.api.espn.com/apis/v2/sports/soccer/{eng.1,usa.1,uefa.champions,ger.1,esp.1,usa.nwsl,mex.1}/standings
+// https://site.api.espn.com/apis/site/v2/sports/soccer/{eng.1,usa.1,uefa.champions,ger.1}/teams
+// https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/summary?event={id} (lineups used to verify players' clubs)
+// https://www.premierleague.com/en/news/4689113/when-are-the-international-breaks-for-202627
+// https://www.flashscore.com/news/soccer-premier-league-why-there-will-be-hardly-any-football-games-for-three-weeks-in-september-and-october/0MZtr5eJ/
+// https://www.uefa.com/uefachampionsleague/news/02a6-20d57cfcd03e-407c22a7f465-1000--2026-27-champions-league-teams-dates-draws-format-final/
+// https://editorial.uefa.com/resources/02a8-21768bda71f7-297d2c258d74-1000/uefa_-_champions_league_-_2026-27_-_league_phase_draw_results_-_calendar_by_matchday.pdf
+// https://pressroom.versantmedia.com/usa-sports/press-releases/usa-sports-and-bundesliga-announce-exclusive-multi-year-us-media-rights
+// https://www.usanetwork.com/usa-insider/how-to-watch-bundesliga-on-usa-network-streaming-on-fandango
+// https://worldsoccertalk.com/bundesliga-tv-schedule/
+// https://bolavip.com/en/soccer/stuttgart-vs-borussia-dortmund-how-to-watch-live-stream-tv-channel-and-time-for-bundesliga-game-on-september-19-2026
+// https://www.laliga.com/noticias/horarios-de-la-septima-jornada-de-laliga-ea-sports-2026-27
+// https://www.cope.es/programas/tiempo-de-juego/noticias/laliga-publica-horarios-tres-proximas-jornadas-derbi-atletico-real-madrid-domingo-20-septiembre-16-15h-20260830_3427219.html
+// https://www.espn.com/soccer/match/_/gameId/401879274/arsenal-brighton-hove-albion
+// https://www.espn.com/soccer/match/_/gameId/401882865/real-madrid-atletico-madrid
+// https://www.foxsports.com/stories/presspass/fox-sports-fox-deportes-unveil-coverage-major-league-soccer-2026-regular-season
+// https://www.fccincinnati.com/news/fc-cincinnati-s-2026-major-league-soccer-regular-season-schedule-unveiled
+// https://worldsoccertalk.com/watch-on-us-tv/how-to-watch-columbus-crew-vs-inter-miami-game-in-the-usa-live-stream-and-tv-for-matchday-28-in-2026-mls-season/
+// https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf (NWSL 2026 tiebreakers)
+// https://www.livesoccertv.com/match/toluca-vs-cruz-azul/1yy56

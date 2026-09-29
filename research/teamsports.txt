@@ -1,0 +1,286 @@
+// Fanatic research: team sports (CFL, EuroLeague, NBL, Unrivaled, NPB, KBO, PWHL, AHL) + RECORDS for nfl/mlb/wnba
+// Compiled 2026-09-28. Times are US Eastern (EDT). Scores only for games final before Thu Sep 24, 8:40 PM ET.
+
+// === LEAGUES
+{ id: 'cfl', sport: 'football', name: 'Canadian Football League', short: 'CFL', color: '#C8102E', espn: false },
+{ id: 'euroleague', sport: 'basketball', name: 'EuroLeague', short: 'EL', color: '#F47B20', espn: false },
+{ id: 'nbl', sport: 'basketball', name: 'NBL (Australia)', short: 'NBL', color: '#1D1D1B', espn: false },
+{ id: 'unrivaled', sport: 'basketball', name: 'Unrivaled', short: 'UNRVLD', color: '#40347D', espn: false, offweek: 'Offseason · Season 3 tips off in January 2027' },
+{ id: 'npb', sport: 'baseball', name: 'Nippon Professional Baseball', short: 'NPB', color: '#002B5C', espn: false },
+{ id: 'kbo', sport: 'baseball', name: 'KBO League', short: 'KBO', color: '#0A3D91', espn: false },
+{ id: 'pwhl', sport: 'hockey', name: 'PWHL', short: 'PWHL', color: '#33058D', espn: false, offweek: 'Offseason · 2026–27 season opens Dec 5' },
+{ id: 'ahl', sport: 'hockey', name: 'American Hockey League', short: 'AHL', color: '#231F20', espn: false, offweek: 'Season opens Oct 2' },
+
+// === TEAM_ROWS
+cfl: `BC|BC Lions|#F15623;CGY|Calgary Stampeders|#CC202C;EDM|Edmonton Elks|#2B5134;SSK|Saskatchewan Roughriders|#006241;WPG|Winnipeg Blue Bombers|#1E3D79;
+HAM|Hamilton Tiger-Cats|#FCB525;MTL|Montreal Alouettes|#071D49;OTT|Ottawa Redblacks|#AC1F2D;TOR|Toronto Argonauts|#0A2240`,
+euroleague: `EFS|Anadolu Efes|#213557;BAR|Barcelona|#A50044;BKN|Baskonia|#CE0E2D;BAY|Bayern Munich|#ED0037;CZV|Crvena Zvezda|#EC1C24;
+DUB|Dubai Basketball|#5C4033;MIL|Olimpia Milano|#E2231A;FEN|Fenerbahçe|#FFED00;HTA|Hapoel Tel Aviv|#CC0305;ASV|ASVEL|#000000;
+MTA|Maccabi Tel Aviv|#FCE13C;BJK|Beşiktaş|#000000;OLY|Olympiacos|#D0061F;PAO|Panathinaikos|#007942;PBB|Paris Basketball|#000000;
+PAR|Partizan|#000000;RMB|Real Madrid|#FEBE10;VBC|Valencia Basket|#FE5900;VIR|Virtus Bologna|#222222;ZAL|Žalgiris|#006D3E`,
+nbl: `ADL|Adelaide 36ers|#000943;BRI|Brisbane Bullets|#064591;CNS|Cairns Taipans|#F79239;ILL|Illawarra Hawks|#000000;MEL|Melbourne United|#000526;
+NZB|New Zealand Breakers|#000000;PER|Perth Wildcats|#EE0000;SEM|South East Melbourne Phoenix|#303030;SYD|Sydney Kings|#5B4099;TAS|Tasmania JackJumpers|#012A22`,
+unrivaled: `BRZ|Breeze BC|#4C3971;HIV|Hive BC|#FFC728;LAC|Laces BC|#74B29F;LUN|Lunar Owls BC|#40347D;MST|Mist BC|#A3D3E7;
+PHA|Phantom BC|#000000;ROS|Rose BC|#DDA493;VIN|Vinyl BC|#820234`,
+npb: `HAN|Hanshin Tigers|#FFD101;YOM|Yomiuri Giants|#ED9E21;YDB|Yokohama DeNA BayStars|#003F8E;HIR|Hiroshima Toyo Carp|#B50A14;YAK|Tokyo Yakult Swallows|#05294D;CHU|Chunichi Dragons|#003884;
+SOF|Fukuoka SoftBank Hawks|#FFC30F;SEI|Saitama Seibu Lions|#102951;NIP|Hokkaido Nippon-Ham Fighters|#006298;ORI|Orix Buffaloes|#000020;LOT|Chiba Lotte Marines|#000000;RAK|Tohoku Rakuten Golden Eagles|#870010`,
+kbo: `KT|KT Wiz|#000000;SAM|Samsung Lions|#074CA1;LG|LG Twins|#C7004E;KIA|Kia Tigers|#EA0029;DOO|Doosan Bears|#131230;
+NC|NC Dinos|#002B69;LOT|Lotte Giants|#0C2340;SSG|SSG Landers|#CE0E2D;HAN|Hanwha Eagles|#FC4E00;KIW|Kiwoom Heroes|#570514`,
+pwhl: `BOS|Boston Fleet|#173F35;MIN|Minnesota Frost|#250E62;MTL|Montréal Victoire|#862633;NY|New York Sirens|#00BFB3;OTT|Ottawa Charge|#A6192E;
+TOR|Toronto Sceptres|#0067B9;SEA|Seattle Torrent|#0A5458;VAN|Vancouver Goldeneyes|#10457F;DET|PWHL Detroit|#000000;HAM|PWHL Hamilton|#F2A900;
+LV|PWHL Las Vegas|#717237;SJ|PWHL San Jose|#F69245`,
+ahl: `CLT|Charlotte Checkers|#F5002A;HFD|Hartford Wolf Pack|#00548E;HER|Hershey Bears|#472A2B;LV|Lehigh Valley Phantoms|#F58427;PRO|Providence Bruins|#231F20;
+SPR|Springfield Thunderbirds|#E31837;WBS|Wilkes-Barre/Scranton Penguins|#1E191A;BEL|Belleville Senators|#E4103C;CLE|Cleveland Monsters|#115687;HAM|Hamilton Hammers|#00539B;
+LAV|Laval Rocket|#083A81;ROC|Rochester Americans|#DF2442;SYR|Syracuse Crunch|#1D427C;TOR|Toronto Marlies|#003C7F;UTI|Utica Comets|#CF1F30;
+CHI|Chicago Wolves|#50000A;GR|Grand Rapids Griffins|#231F20;IA|Iowa Wild|#004F30;MB|Manitoba Moose|#041E41;MIL|Milwaukee Admirals|#0E2B58;
+RFD|Rockford IceHogs|#DA1A32;TEX|Texas Stars|#14602D;ABB|Abbotsford Canucks|#007934;BAK|Bakersfield Condors|#00205B;CGY|Calgary Wranglers|#CE0E2D;
+CV|Coachella Valley Firebirds|#001425;COL|Colorado Eagles|#12368B;HSK|Henderson Silver Knights|#C3C7C9;ONT|Ontario Reign|#000000;SD|San Diego Gulls|#231F20;
+SJ|San Jose Barracuda|#216B74;TUC|Tucson Roadrunners|#6F263D`,
+
+// === SHORTNAME
+cfl: pro
+euroleague: club
+nbl: pro
+unrivaled: club
+npb: pro
+kbo: pro
+pwhl: pro
+ahl: pro
+
+// === GAME_LEN
+cfl: 185,
+euroleague: 115,
+nbl: 115,
+unrivaled: 60,
+npb: 195,
+kbo: 190,
+pwhl: 150,
+ahl: 150,
+
+// === GAME_ROWS
+// [league, dateET, timeET|null, awayAbbr, homeAbbr, network, note, extras?]
+// ---- CFL (Week 16 results, Week 17). US: CBSSN when carried, otherwise CFL+
+['cfl', '2026-09-18', '19:30', 'MTL', 'HAM', 'CBSSN', 'Week 16', { score: [37, 25] }],
+['cfl', '2026-09-19', '15:00', 'EDM', 'TOR', 'CFL+', 'Week 16', { score: [19, 24] }],
+['cfl', '2026-09-19', '19:00', 'OTT', 'CGY', 'CFL+', 'Week 16', { score: [38, 40] }],
+['cfl', '2026-09-25', '20:00', 'TOR', 'WPG', 'CBSSN', 'Week 17'],
+['cfl', '2026-09-25', '22:30', 'SSK', 'BC', 'CFL+', 'Week 17'],
+['cfl', '2026-09-26', '15:00', 'CGY', 'OTT', 'CFL+', 'Week 17'],
+['cfl', '2026-09-26', '19:00', 'HAM', 'EDM', 'CFL+', 'Week 17'],
+// ---- EuroLeague (Round 1 opened Sep 24; Round 2 Sep 29–30)
+['euroleague', '2026-09-24', '12:00', 'RMB', 'DUB', 'EuroLeague TV', 'Round 1', { score: [77, 78] }],
+['euroleague', '2026-09-24', '12:00', 'BAY', 'HTA', 'EuroLeague TV', 'Round 1 · played in Sofia', { score: [86, 84] }],
+['euroleague', '2026-09-24', '14:00', 'ZAL', 'CZV', 'EuroLeague TV', 'Round 1', { score: [83, 77] }],
+['euroleague', '2026-09-24', '14:15', 'PBB', 'PAO', 'EuroLeague TV', 'Round 1', { score: [72, 91] }],
+['euroleague', '2026-09-24', '14:30', 'EFS', 'BAR', 'EuroLeague TV', 'Round 1', { score: [82, 89] }],
+['euroleague', '2026-09-24', '14:30', 'OLY', 'BKN', 'EuroLeague TV', 'Round 1', { score: [106, 89] }],
+['euroleague', '2026-09-24', '14:45', 'MTA', 'ASV', 'EuroLeague TV', 'Round 1', { score: [74, 84] }],
+['euroleague', '2026-09-25', '13:00', 'VBC', 'BJK', 'EuroLeague TV', 'Round 1'],
+['euroleague', '2026-09-25', '13:45', 'VIR', 'FEN', 'EuroLeague TV', 'Round 1'],
+['euroleague', '2026-09-25', '14:45', 'MIL', 'PAR', 'EuroLeague TV', 'Round 1'],
+['euroleague', '2026-09-29', '12:00', 'BAR', 'DUB', 'EuroLeague TV', 'Round 2'],
+['euroleague', '2026-09-29', '13:00', 'OLY', 'ZAL', 'EuroLeague TV', 'Round 2'],
+['euroleague', '2026-09-29', '13:00', 'RMB', 'EFS', 'EuroLeague TV', 'Round 2'],
+['euroleague', '2026-09-29', '13:45', 'BAY', 'FEN', 'EuroLeague TV', 'Round 2'],
+['euroleague', '2026-09-29', '14:00', 'HTA', 'CZV', 'EuroLeague TV', 'Round 2'],
+['euroleague', '2026-09-29', '14:30', 'VIR', 'MIL', 'EuroLeague TV', 'Round 2'],
+['euroleague', '2026-09-29', '14:30', 'BKN', 'VBC', 'EuroLeague TV', 'Round 2'],
+['euroleague', '2026-09-29', '14:45', 'PAR', 'PBB', 'EuroLeague TV', 'Round 2'],
+['euroleague', '2026-09-30', '14:05', 'BJK', 'MTA', 'EuroLeague TV', 'Round 2 · played in Belgrade'],
+['euroleague', '2026-09-30', '14:15', 'ASV', 'PAO', 'EuroLeague TV', 'Round 2'],
+// ---- NBL (NBL27 opened Sep 19 local time). ET = previous night / early morning
+['nbl', '2026-09-19', '05:30', 'ADL', 'MEL', 'EuroLeague TV', 'Round 1 · season opener', { score: [97, 95] }],
+['nbl', '2026-09-19', '07:30', 'SEM', 'PER', 'EuroLeague TV', 'Round 1', { score: [100, 79] }],
+['nbl', '2026-09-20', '01:00', 'ILL', 'NZB', 'EuroLeague TV', 'Round 1', { score: [81, 95] }],
+['nbl', '2026-09-20', '03:00', 'CNS', 'SYD', 'EuroLeague TV', 'Round 1', { score: [90, 111] }],
+['nbl', '2026-09-21', '05:30', 'SEM', 'TAS', 'EuroLeague TV', 'Round 1', { score: [91, 96] }],
+['nbl', '2026-09-22', '05:30', 'NZB', 'BRI', 'EuroLeague TV', 'Round 1', { score: [85, 88] }],
+['nbl', '2026-09-23', '05:30', 'TAS', 'CNS', 'EuroLeague TV', 'Round 2', { score: [87, 93] }],
+['nbl', '2026-09-24', '05:30', 'MEL', 'SEM', 'EuroLeague TV', 'Round 2', { score: [86, 61] }],
+['nbl', '2026-09-24', '07:30', 'ADL', 'PER', 'EuroLeague TV', 'Round 2', { score: [97, 98] }],
+['nbl', '2026-09-25', '05:30', 'ILL', 'BRI', 'EuroLeague TV', 'Round 2'],
+['nbl', '2026-09-26', '07:30', 'NZB', 'PER', 'EuroLeague TV', 'Round 2'],
+['nbl', '2026-09-27', '02:00', 'CNS', 'ADL', 'EuroLeague TV', 'Round 2'],
+['nbl', '2026-09-27', '04:00', 'ILL', 'SYD', 'EuroLeague TV', 'Round 2'],
+['nbl', '2026-09-30', '03:30', 'CNS', 'NZB', 'EuroLeague TV', 'Round 3'],
+['nbl', '2026-09-30', '05:30', 'BRI', 'SYD', 'EuroLeague TV', 'Round 3'],
+// ---- NPB: notable results Sep 17–23, then every game Sep 24–30 (JST 18:00 = 05:00 ET same date; 14:00 JST = 01:00 ET)
+['npb', '2026-09-17', '05:00', 'SOF', 'ORI', 'TBD', 'Pacific League · Hawks clinch 3rd straight pennant', { score: [7, 1] }],
+['npb', '2026-09-18', '05:00', 'HIR', 'HAN', 'TBD', 'Central League', { score: [1, 2] }],
+['npb', '2026-09-19', '01:00', 'CHU', 'YOM', 'TBD', 'Central League', { score: [1, 14] }],
+['npb', '2026-09-20', '01:00', 'YAK', 'YOM', 'TBD', 'Central League', { score: [2, 3] }],
+['npb', '2026-09-21', '01:00', 'YDB', 'HAN', 'TBD', 'Central League', { score: [2, 3] }],
+['npb', '2026-09-22', '05:00', 'SEI', 'SOF', 'TBD', 'Pacific League', { score: [5, 6] }],
+['npb', '2026-09-23', '01:00', 'HAN', 'YAK', 'TBD', 'Central League', { score: [8, 4] }],
+['npb', '2026-09-23', '02:00', 'YOM', 'HIR', 'TBD', 'Central League', { score: [2, 1] }],
+['npb', '2026-09-24', '05:00', 'YOM', 'HIR', 'TBD', 'Central League', { score: [1, 3] }],
+['npb', '2026-09-24', '05:00', 'RAK', 'NIP', 'TBD', 'Pacific League', { score: [6, 0] }],
+['npb', '2026-09-25', '05:00', 'CHU', 'YAK', 'TBD', 'Central League'],
+['npb', '2026-09-25', '05:00', 'HAN', 'YDB', 'TBD', 'Central League'],
+['npb', '2026-09-25', '05:00', 'YOM', 'HIR', 'TBD', 'Central League'],
+['npb', '2026-09-25', '05:00', 'LOT', 'SEI', 'TBD', 'Pacific League'],
+['npb', '2026-09-25', '05:00', 'SOF', 'ORI', 'TBD', 'Pacific League'],
+['npb', '2026-09-26', '01:00', 'HAN', 'YDB', 'TBD', 'Central League'],
+['npb', '2026-09-26', '01:00', 'LOT', 'SEI', 'TBD', 'Pacific League'],
+['npb', '2026-09-26', '01:00', 'NIP', 'ORI', 'TBD', 'Pacific League'],
+['npb', '2026-09-26', '05:00', 'CHU', 'YAK', 'TBD', 'Central League'],
+['npb', '2026-09-26', '05:00', 'RAK', 'SOF', 'TBD', 'Pacific League'],
+['npb', '2026-09-27', '01:00', 'HIR', 'YDB', 'TBD', 'Central League'],
+['npb', '2026-09-27', '01:00', 'ORI', 'SOF', 'TBD', 'Pacific League'],
+['npb', '2026-09-27', '05:00', 'YAK', 'YOM', 'TBD', 'Central League'],
+['npb', '2026-09-27', '05:00', 'RAK', 'SEI', 'TBD', 'Pacific League'],
+['npb', '2026-09-27', '05:00', 'NIP', 'LOT', 'TBD', 'Pacific League'],
+['npb', '2026-09-28', '05:00', 'HIR', 'YDB', 'TBD', 'Central League'],
+['npb', '2026-09-28', '05:00', 'RAK', 'SEI', 'TBD', 'Pacific League'],
+['npb', '2026-09-28', '05:00', 'NIP', 'LOT', 'TBD', 'Pacific League'],
+['npb', '2026-09-29', '05:00', 'HIR', 'YOM', 'TBD', 'Central League'],
+['npb', '2026-09-29', '05:00', 'YAK', 'HAN', 'TBD', 'Central League'],
+['npb', '2026-09-29', '05:00', 'LOT', 'RAK', 'TBD', 'Pacific League'],
+['npb', '2026-09-29', '05:00', 'ORI', 'SEI', 'TBD', 'Pacific League'],
+['npb', '2026-09-30', '05:00', 'YAK', 'HAN', 'TBD', 'Central League'],
+['npb', '2026-09-30', '05:00', 'LOT', 'RAK', 'TBD', 'Pacific League'],
+// ---- KBO: notable results Sep 17–23, then every game Sep 24–30 (KST 18:30 = 05:30 ET, 17:00 = 04:00 ET, 14:00 = 01:00 ET; same date)
+['kbo', '2026-09-18', '05:30', 'LG', 'KT', 'SOOP', '', { score: [12, 1] }],
+['kbo', '2026-09-18', '05:30', 'SAM', 'HAN', 'SOOP', '', { score: [10, 4] }],
+['kbo', '2026-09-19', '04:00', 'HAN', 'LG', 'SOOP', '', { score: [1, 2] }],
+['kbo', '2026-09-19', '04:00', 'DOO', 'KT', 'SOOP', '', { score: [3, 15] }],
+['kbo', '2026-09-20', '01:00', 'DOO', 'KT', 'SOOP', '', { score: [8, 9] }],
+['kbo', '2026-09-20', '01:00', 'SAM', 'LOT', 'SOOP', '', { score: [6, 13] }],
+['kbo', '2026-09-22', '05:30', 'KT', 'SSG', 'SOOP', '', { score: [8, 2] }],
+['kbo', '2026-09-23', '05:30', 'KIA', 'DOO', 'SOOP', '', { score: [2, 3] }],
+['kbo', '2026-09-24', '04:00', 'LOT', 'LG', 'SOOP', 'Chuseok holiday', { score: [6, 4] }],
+['kbo', '2026-09-24', '04:00', 'SAM', 'SSG', 'SOOP', 'Chuseok holiday', { score: [5, 4] }],
+['kbo', '2026-09-24', '04:00', 'NC', 'KT', 'SOOP', 'Chuseok holiday', { score: [2, 3] }],
+['kbo', '2026-09-25', '04:00', 'LOT', 'DOO', 'SOOP', ''],
+['kbo', '2026-09-25', '04:00', 'SAM', 'SSG', 'SOOP', ''],
+['kbo', '2026-09-25', '04:00', 'HAN', 'NC', 'SOOP', ''],
+['kbo', '2026-09-26', '04:00', 'LG', 'KIA', 'SOOP', ''],
+['kbo', '2026-09-26', '04:00', 'KIW', 'KT', 'SOOP', ''],
+['kbo', '2026-09-26', '04:00', 'HAN', 'NC', 'SOOP', ''],
+['kbo', '2026-09-27', '04:00', 'KT', 'DOO', 'SOOP', ''],
+['kbo', '2026-09-27', '04:00', 'HAN', 'LOT', 'SOOP', ''],
+['kbo', '2026-09-27', '04:00', 'LG', 'KIA', 'SOOP', ''],
+['kbo', '2026-09-27', '04:00', 'KIW', 'NC', 'SOOP', ''],
+['kbo', '2026-09-29', '05:30', 'NC', 'DOO', 'SOOP', ''],
+['kbo', '2026-09-29', '05:30', 'HAN', 'SAM', 'SOOP', ''],
+['kbo', '2026-09-29', '05:30', 'KIW', 'LOT', 'SOOP', ''],
+['kbo', '2026-09-29', '05:30', 'LG', 'SSG', 'SOOP', ''],
+['kbo', '2026-09-29', '05:30', 'KT', 'KIA', 'SOOP', ''],
+['kbo', '2026-09-30', '05:30', 'NC', 'DOO', 'SOOP', ''],
+['kbo', '2026-09-30', '05:30', 'HAN', 'SAM', 'SOOP', ''],
+['kbo', '2026-09-30', '05:30', 'KIW', 'LOT', 'SOOP', ''],
+['kbo', '2026-09-30', '05:30', 'LG', 'SSG', 'SOOP', ''],
+['kbo', '2026-09-30', '05:30', 'KT', 'KIA', 'SOOP', ''],
+
+// === EVENT_ROWS
+// (none)
+
+// === PLAYERS
+['dalexander', 'Davis Alexander', 'QB', 'cfl-MTL'], ['philpot', 'Tyson Philpot', 'WR', 'cfl-MTL'], ['fajardo', 'Cody Fajardo', 'QB', 'cfl-EDM'],
+['vezenkov', 'Sasha Vezenkov', 'F', 'euroleague-OLY'], ['valanciunas', 'Jonas Valančiūnas', 'C', 'euroleague-ZAL'], ['punter', 'Kevin Punter', 'G', 'euroleague-BAR'],
+['cotton', 'Bryce Cotton', 'G', 'nbl-ADL'], ['dellavedova', 'Matthew Dellavedova', 'G', 'nbl-SYD'], ['pjc', 'Parker Jackson-Cartwright', 'G', 'nbl-NZB'],
+['tsato', 'Teruaki Sato', '3B', 'npb-HAN'], ['kondoh', 'Kensuke Kondoh', 'OF', 'npb-SOF'], ['freyes', 'Franmil Reyes', 'DH', 'npb-NIP'],
+['kimdoyeong', 'Kim Do-yeong', '3B', 'kbo-KIA'], ['adean', 'Austin Dean', '1B', 'kbo-LG'], ['kwakbin', 'Kwak Bin', 'P', 'kbo-DOO'],
+
+// === RECORDS
+// New leagues (as of Thu Sep 24, 8:40 PM ET; ordered league-wide, best first)
+cfl: `MTL|11-3;EDM|10-4;SSK|8-5;TOR|8-6;BC|7-6;WPG|7-6;CGY|6-8;HAM|4-10;OTT|0-13`,
+euroleague: `PAO|1-0;OLY|1-0;ASV|1-0;BAR|1-0;ZAL|1-0;BAY|1-0;DUB|1-0;BJK|0-0;FEN|0-0;MIL|0-0;PAR|0-0;VBC|0-0;VIR|0-0;RMB|0-1;HTA|0-1;CZV|0-1;EFS|0-1;MTA|0-1;BKN|0-1;PBB|0-1`,
+nbl: `SYD|1-0;BRI|1-0;MEL|1-1;NZB|1-1;ADL|1-1;TAS|1-1;CNS|1-1;PER|1-1;SEM|1-2;ILL|0-1`,
+npb: `SOF|86-47-3;HAN|75-58-1;SEI|74-58-4;NIP|75-61-3;YOM|74-61-2;YDB|68-66-3;ORI|65-71-2;LOT|58-70-3;CHU|59-78-2;YAK|57-76-2;HIR|55-75-4;RAK|54-79-1`,
+kbo: `KT|80-48-4;SAM|78-52-3;LG|75-56-1;KIA|71-58-2;DOO|67-62-5;NC|60-69-2;LOT|59-71-2;SSG|58-71-5;HAN|54-74-4;KIW|45-86-4`,
+// Existing leagues
+nfl: `SF|2-0;SEA|2-0;LV|2-0;KC|2-0;MIN|2-0;CIN|2-0;BUF|2-0;PHI|2-0;JAX|1-1;CHI|1-1;NE|1-1;BAL|1-1;NYJ|1-1;CAR|1-1;DAL|1-1;NO|1-1;LAR|1-1;DET|1-1;PIT|1-1;ARI|1-1;GB|1-1;NYG|1-1;DEN|1-1;CLE|1-1;TB|0-2;TEN|0-2;HOU|0-2;WAS|0-2;IND|0-2;LAC|0-2;MIA|0-2;ATL|0-2`,
+mlb: `MIL|99-59;LAD|97-61;TB|96-62;ATL|93-65;NYY|91-67;SD|88-70;CHC|87-71;PHI|87-71;BOS|85-73;ARI|84-74;CLE|82-76;CWS|81-77;PIT|80-78;HOU|78-80;TEX|78-80;MIA|78-80;BAL|78-81;STL|77-81;TOR|77-82;MIN|75-84;WSH|75-84;SEA|74-84;DET|74-85;CIN|73-85;NYM|73-85;KC|68-90;SF|65-94;ATH|63-95;LAA|60-98;COL|57-101`,
+wnba: `MIN|33-11;GSV|32-12;LVA|31-13;ATL|30-14;WAS|28-16;IND|28-16;DAL|27-17;NYL|26-18;POR|17-27;CHI|16-28;LA|16-28;PHX|16-28;TOR|11-33;CON|11-33;SEA|8-36`,
+
+// === NETWORKS_ADDED
+'CFL+'           // CFL's own streaming service; carries games not on CBS Sports Network in the US
+'EuroLeague TV'  // EuroLeague's OTT service (all EuroLeague games); NBL lists it as its US outlet too
+'SOOP'           // KBO's international streaming rights holder (free outside Korea)
+
+// === NOTES
+// GENERAL
+// - Records are ordered league-wide by win% (ties broken by point differential for NFL, NBL, CFL and EuroLeague). NPB mixes Central and Pacific; KBO is one table; CFL mixes West/East.
+//
+// CFL
+// - Standings = official table (Wikipedia, 2026 CFL standings templates) minus Week 17 results (Sep 25–26). Week 16 had only 3 games (BC, SSK, WPG on bye); Week 17 bye: MTL. Week 18 starts Oct 2.
+// - US TV: CBSSN confirmed for MTL@HAM (Sep 18) and TOR@WPG (Sep 25) (3DownNation / fbschedules CBSSN list). The other 5 are 'CFL+', which carries non-CBSSN games in the US (per Wikipedia's 2026 CFL season broadcasting section). Not in the spec network list, so added.
+// - Kickoffs converted from team-page local times: SSK@BC 7:30 PM PDT = 22:30 ET; OTT@CGY 5 PM MDT = 19:00 ET; HAM@EDM 5 PM MDT = 19:00 ET.
+// - Standout: Ottawa was 0-13 entering Sep 24 (0-14 after Week 17).
+//
+// EUROLEAGUE
+// - Round 1 times/scores come from the official EuroLeague feed (UTC) and Wikipedia. Wikipedia's match box shows Paris 82 vs Panathinaikos, but its own quarter scores and the league feed give 72, so I used 91–72.
+// - Hapoel Tel Aviv's home games are played in Sofia (Arena 8888), and Maccabi Tel Aviv's in Belgrade (Aleksandar Nikolić Hall). I noted this on the relevant rows.
+// - US network: FanDuel TV (FanDuel TV Extra / FanDuel TV+) carries 100+ selected games, but I couldn't verify which ones, so every row says 'EuroLeague TV' (which streams every game). Swap in 'FanDuel TV' if you'd rather.
+// - Sep 25 games (Round 1 day 2) start 13:00–14:45 ET, after the clock → no score.
+//
+// NBL
+// - Times from ESPN's NBL scoreboard (UTC), cross-checked against Wikipedia local times. Wikipedia lists Breakers v Taipans (Sep 30, Auckland) at 19:30 local, but Spark Arena and ESPN both say 8:30 PM NZDT (NZ DST began Sep 27) = 03:30 ET. I used 03:30.
+// - Network: NBL's "How to watch NBL27" page lists EuroLeague TV (USA) and NBA TV (USA/Canada, presumably selected games). I used 'EuroLeague TV'. ESPN's own US platforms didn't list NBL in 2026-27 sources I found.
+// - shortName 'pro' gives 'United' for Melbourne United and '36ers' for Adelaide; you may want a special case for Melbourne ('Melbourne United' or 'Melbourne').
+//
+// UNRIVALED
+// - 8 clubs (Breeze and Hive joined for 2026). Mist BC won the 2026 title (Mar 4). No new clubs announced for 2027. Season 3 opens in January 2027 (tour stops start Jan 8 in Boston). I didn't include a specific opener date because sources disagree.
+// - shortName must be 'club' (the full name ends in "BC", so 'pro' would show "BC").
+//
+// NPB
+// - Source: npb.jp monthly schedule/result pages (JST). Records were recomputed from every 2026 result and match npb.jp's official table as of Sep 28 (after I added back Sep 25–28). SoftBank clinched its 3rd straight Pacific League pennant on Sep 17 at Orix (npb.jp news).
+// - US network: there's no per-game US outlet, so I used 'TBD'. Some Pacific League games stream on various FAST/OTT services, but I couldn't verify any per game.
+// - Excluded: SEI@LOT Sep 20 & 21 and SOF@RAK Sep 21 (rained out, "中止"); YDB–HIR Sep 30 is only a reserve date (予備日), not a scheduled game.
+// - Every game Sep 24–30 is included (only 2 on Sep 24). 8 notable results from Sep 17–23.
+//
+// KBO
+// - Source: koreabaseball.com schedule API (KST). Records recomputed from all 2026 results; they match Wikipedia's table "as of Sep 27" when run to that date.
+// - Sep 24–27 games started at 17:00 KST (Chuseok holiday period) = 04:00 ET the same date.
+// - HEADS-UP: 3 included games were later rained out (우천취소): LOT@DOO and SAM@SSG on Sep 25, and LG@KIA on Sep 27. They were scheduled as of the Sep 24 clock, so I kept them with no score. Drop them if you'd rather not show them.
+// - Network 'SOOP' (international rights through 2026 per Korea Times / league). Added to NETWORKS_ADDED.
+// - Players: Kim Do-yeong (KIA, KBO HR leader, 40), Austin Dean (LG, .342), Kwak Bin (Doosan, ERA leader 2.26); stats as of Sep 28.
+//
+// PWHL
+// - 12 teams in 2026–27: the 8 existing clubs plus expansion Detroit, Hamilton, Las Vegas and San Jose. The expansion teams have no nicknames yet, so they're listed as "PWHL <City>" with the colors each announced.
+// - shortName 'pro' would show "Detroit", "Hamilton", "Vegas" and "Jose". Las Vegas and San Jose need a special case (city names).
+// - Offweek note: the Dec 5–6 opening weekend was announced Sep 28, after the prototype clock. If you want strictly pre-clock knowledge, use 'Offseason · preseason camps open Nov 18' (announced Sep 10).
+// - US TV for 2026–27: Scripps Sports / ION (deal announced Sep 9).
+//
+// AHL
+// - 32 teams. Bridgeport relocated to become the Hamilton Hammers (Islanders affiliate, North Division). Opening night is Oct 2 (the earliest since 2009). Hamilton debuts at Belleville, and the Toronto Marlies (2026 Calder Cup champions) raise their banner Oct 3 vs Hamilton. I couldn't verify any preseason games inside Sep 17–30, so I added no rows.
+// - shortName 'pro' will show "Pack" (Wolf Pack) and "Knights" (Silver Knights). Add these to PRO_NICK2 (also 'Blue Bombers', 'Golden Eagles', 'Tiger-Cats' is fine).
+//
+// COLORS
+// - Most colors come from the first hex in each team's Wikipedia infobox. Approximations: Dubai Basketball (#5C4033; club colors are "brown, black and white", no official hex found) and Paris Basketball (#000000, unverified). Barcelona/Real Madrid reuse data.js's LaLiga colors for consistency. League colors (except PWHL) are styling choices.
+//
+// EXISTING LEAGUES
+// - NFL: computed from ESPN Week 1 + Week 2 finals (Week 2 matches data.js). ESPN 'WSH' mapped to 'WAS'.
+// - MLB: ESPN final 2026 standings minus every game played Sep 24–27 (BAL@NYY Sep 27 was canceled). So these are true records entering Sep 24. Mapped CHW→CWS.
+// - WNBA: final 2026 regular-season records (ESPN). Seeds match data.js's projected first-round pairings (1 MIN–8 NYL, 2 GSV–7 DAL, 3 LVA–6 IND, 4 ATL–5 WAS). Note the season wasn't actually finished at 8:40 PM ET on Sep 24: IND@MIN tipped at 20:00 ET, and GSV@LA (76–75 GSV) and LVA@PHX (100–82 LVA) tipped at 22:00 ET. Those last two are missing from data.js. data.js also shows a score for IND@MIN, which conflicts with the no-score rule. Actual ET tips on Sep 24: TOR@CON 19:00, CHI@WAS 19:30, IND@MIN 20:00, GSV@LA 22:00, LVA@PHX 22:00.
+
+// === SOURCES
+// https://en.wikipedia.org/wiki/2026_CFL_season (+ Template:2026 CFL West/East Division standings; 2026 season pages for all 9 CFL teams)
+// https://fbschedules.com/cfl-tv-schedule-cbs-sports-network-to-televise-34-games-in-2026/
+// https://3downnation.com/2026/05/21/cfl-unveils-broadcast-schedule-for-final-year-of-american-tv-deal-with-cbs-sports-network/
+// https://en.wikipedia.org/wiki/2026–27_EuroLeague_regular_season
+// https://feeds.incrowdsports.com/provider/euroleague-feeds/v2/competitions/E/seasons/E2026/games?roundNumber=1 (and =2)
+// https://live.euroleague.net/api/Boxscore?gamecode=1&seasoncode=E2026 (box scores, games 1, 4, 5, 7)
+// https://www.eurohoops.net/en/euroleague/1883377/euroleague-and-fanduel-extend-media-rights-agreements-until-2028/
+// https://site.api.espn.com/apis/site/v2/sports/basketball/nbl/scoreboard?dates=YYYYMMDD (Sep 16–Oct 1)
+// https://en.wikipedia.org/wiki/2026–27_NBL_season
+// https://www.sparkarena.co.nz/all-events/bnz-breakers-tickets-ae1464427
+// https://www.nbl.com.au/news/how-to-watch-the-hungry-jacks-nbl27-season
+// https://en.wikipedia.org/wiki/Unrivaled_(basketball)
+// https://sports.yahoo.com/articles/unrivaled-announces-2027-schedule-tickets-173611677.html
+// https://npb.jp/games/2026/schedule_09_detail.html (and _03 … _08, _10)
+// https://npb.jp/bis/2026/stats/ (standings and batting leaders as of Sep 28)
+// https://npb.jp/news/detail/20260917_04.html (SoftBank clinch)
+// https://www.koreabaseball.com/Schedule/Schedule.aspx (GetScheduleList API, Mar–Oct 2026)
+// https://www.koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx ; .../PitcherBasic/Basic1.aspx
+// https://en.wikipedia.org/wiki/2026_KBO_League_season
+// https://www.koreatimes.co.kr/sports/20240613/kbo-games-to-be-streamed-live-overseas
+// https://en.wikipedia.org/wiki/2026–27_PWHL_season ; PWHL Detroit/Hamilton/Las Vegas/San Jose articles
+// https://www.thepwhl.com/en/news/2026/september/28/pwhl-opening-weekend-scheduled-for-december-5-6
+// https://en.wikipedia.org/wiki/American_Hockey_League
+// https://www.flohockey.tv/articles/16055362-ahl-announces-2026-27-schedule-opening-night-set-for-oct-2
+// https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?seasontype=2&week=1|2&dates=2026
+// https://site.api.espn.com/apis/v2/sports/baseball/mlb/standings ; .../baseball/mlb/scoreboard?dates=20260924..20260928
+// https://site.api.espn.com/apis/v2/sports/basketball/wnba/standings ; .../basketball/wnba/scoreboard?dates=20260924
+// Team colors: Wikipedia infoboxes (team articles) and Module:Gridiron color/data (CFL)

@@ -1,0 +1,4 @@
+.DS_Store
+# local backups made while editing
+research/*.orig.*
+research/merged.txt
